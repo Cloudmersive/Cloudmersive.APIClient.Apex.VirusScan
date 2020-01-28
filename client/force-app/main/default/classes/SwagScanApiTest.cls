@@ -97,7 +97,7 @@ private class SwagScanApiTest {
             client.setApiKey('foo-bar-api-key');
 
         res.setHeader('Content-Type', 'application/json');
-        res.setBody('{\r\n  "FoundViruses" : [ {\r\n    "FileName" : "FileName",\r\n    "VirusName" : "VirusName"\r\n  }, {\r\n    "FileName" : "FileName",\r\n    "VirusName" : "VirusName"\r\n  } ],\r\n  "CleanResult" : true,\r\n  "WebsiteThreatType" : "None"\r\n}');
+        res.setBody('{\r\n  "WebsiteHttpResponseCode" : 0,\r\n  "FoundViruses" : [ {\r\n    "FileName" : "FileName",\r\n    "VirusName" : "VirusName"\r\n  }, {\r\n    "FileName" : "FileName",\r\n    "VirusName" : "VirusName"\r\n  } ],\r\n  "CleanResult" : true,\r\n  "WebsiteThreatType" : "None"\r\n}');
         expectedResponse = SwagWebsiteScanResult.getExample();
         response = (SwagWebsiteScanResult) api.scanWebsite(params);
         System.assertEquals(expectedResponse, response);

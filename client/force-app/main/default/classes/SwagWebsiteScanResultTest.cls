@@ -85,6 +85,7 @@ private class SwagWebsiteScanResultTest {
         System.assertEquals('cleanResult', propertyMappings.get('CleanResult'));
         System.assertEquals('websiteThreatType', propertyMappings.get('WebsiteThreatType'));
         System.assertEquals('foundViruses', propertyMappings.get('FoundViruses'));
+        System.assertEquals('websiteHttpResponseCode', propertyMappings.get('WebsiteHttpResponseCode'));
     }
 
     @isTest
@@ -93,5 +94,6 @@ private class SwagWebsiteScanResultTest {
         System.assertEquals(new List<SwagVirusFound>(), websiteScanResult.foundViruses);
         System.assertEquals(null, websiteScanResult.cleanResult);
         System.assertEquals(null, websiteScanResult.websiteThreatType);
+        System.assertEquals(null, websiteScanResult.websiteHttpResponseCode);
     }
 }

@@ -43,10 +43,17 @@ public class SwagWebsiteScanResult implements Swagger.MappedProperties {
      */
     public List<SwagVirusFound> foundViruses { get; set; }
 
+    /**
+     * The remote server URL HTTP reasponse code; useful for debugging issues with scanning; typically if the remote server returns a 200 or 300-series code this means a successful response, while a 400 or 500 series code would represent an error returned from the remote server for the provided URL.
+     * @return websiteHttpResponseCode
+     */
+    public Integer websiteHttpResponseCode { get; set; }
+
     private static final Map<String, String> propertyMappings = new Map<String, String>{
         'CleanResult' => 'cleanResult',
         'WebsiteThreatType' => 'websiteThreatType',
-        'FoundViruses' => 'foundViruses'
+        'FoundViruses' => 'foundViruses',
+        'WebsiteHttpResponseCode' => 'websiteHttpResponseCode'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -62,6 +69,7 @@ public class SwagWebsiteScanResult implements Swagger.MappedProperties {
         websiteScanResult.cleanResult = true;
         websiteScanResult.websiteThreatType = WebsiteThreatTypeEnum.NONE;
         websiteScanResult.foundViruses = new List<SwagVirusFound>{SwagVirusFound.getExample()};
+        websiteScanResult.websiteHttpResponseCode = 123;
         return websiteScanResult;
     }
 
@@ -70,7 +78,8 @@ public class SwagWebsiteScanResult implements Swagger.MappedProperties {
             SwagWebsiteScanResult websiteScanResult = (SwagWebsiteScanResult) obj;
             return this.cleanResult == websiteScanResult.cleanResult
                 && this.websiteThreatType == websiteScanResult.websiteThreatType
-                && this.foundViruses == websiteScanResult.foundViruses;
+                && this.foundViruses == websiteScanResult.foundViruses
+                && this.websiteHttpResponseCode == websiteScanResult.websiteHttpResponseCode;
         }
         return false;
     }
@@ -80,6 +89,7 @@ public class SwagWebsiteScanResult implements Swagger.MappedProperties {
         hashCode = (17 * hashCode) + (cleanResult == null ? 0 : System.hashCode(cleanResult));
         hashCode = (17 * hashCode) + (websiteThreatType == null ? 0 : System.hashCode(websiteThreatType));
         hashCode = (17 * hashCode) + (foundViruses == null ? 0 : System.hashCode(foundViruses));
+        hashCode = (17 * hashCode) + (websiteHttpResponseCode == null ? 0 : System.hashCode(websiteHttpResponseCode));
         return hashCode;
     }
 }
