@@ -39,6 +39,12 @@ public class SwagVirusScanAdvancedResult implements Swagger.MappedProperties {
     public Boolean containsScript { get; set; }
 
     /**
+     * True if the scan contained a password protected or encrypted file, which can be a significant risk factor
+     * @return containsPasswordProtectedFile
+     */
+    public Boolean containsPasswordProtectedFile { get; set; }
+
+    /**
      * True if the uploaded file is of a type that is not allowed based on the optional restrictFileTypes parameter, false otherwise; if restrictFileTypes is not set, this will always be false
      * @return containsRestrictedFileFormat
      */
@@ -61,6 +67,7 @@ public class SwagVirusScanAdvancedResult implements Swagger.MappedProperties {
         'ContainsExecutable' => 'containsExecutable',
         'ContainsInvalidFile' => 'containsInvalidFile',
         'ContainsScript' => 'containsScript',
+        'ContainsPasswordProtectedFile' => 'containsPasswordProtectedFile',
         'ContainsRestrictedFileFormat' => 'containsRestrictedFileFormat',
         'VerifiedFileFormat' => 'verifiedFileFormat',
         'FoundViruses' => 'foundViruses'
@@ -80,6 +87,7 @@ public class SwagVirusScanAdvancedResult implements Swagger.MappedProperties {
         virusScanAdvancedResult.containsExecutable = true;
         virusScanAdvancedResult.containsInvalidFile = true;
         virusScanAdvancedResult.containsScript = true;
+        virusScanAdvancedResult.containsPasswordProtectedFile = true;
         virusScanAdvancedResult.containsRestrictedFileFormat = true;
         virusScanAdvancedResult.verifiedFileFormat = 'aeiou';
         virusScanAdvancedResult.foundViruses = new List<SwagVirusFound>{SwagVirusFound.getExample()};
@@ -93,6 +101,7 @@ public class SwagVirusScanAdvancedResult implements Swagger.MappedProperties {
                 && this.containsExecutable == virusScanAdvancedResult.containsExecutable
                 && this.containsInvalidFile == virusScanAdvancedResult.containsInvalidFile
                 && this.containsScript == virusScanAdvancedResult.containsScript
+                && this.containsPasswordProtectedFile == virusScanAdvancedResult.containsPasswordProtectedFile
                 && this.containsRestrictedFileFormat == virusScanAdvancedResult.containsRestrictedFileFormat
                 && this.verifiedFileFormat == virusScanAdvancedResult.verifiedFileFormat
                 && this.foundViruses == virusScanAdvancedResult.foundViruses;
@@ -106,6 +115,7 @@ public class SwagVirusScanAdvancedResult implements Swagger.MappedProperties {
         hashCode = (17 * hashCode) + (containsExecutable == null ? 0 : System.hashCode(containsExecutable));
         hashCode = (17 * hashCode) + (containsInvalidFile == null ? 0 : System.hashCode(containsInvalidFile));
         hashCode = (17 * hashCode) + (containsScript == null ? 0 : System.hashCode(containsScript));
+        hashCode = (17 * hashCode) + (containsPasswordProtectedFile == null ? 0 : System.hashCode(containsPasswordProtectedFile));
         hashCode = (17 * hashCode) + (containsRestrictedFileFormat == null ? 0 : System.hashCode(containsRestrictedFileFormat));
         hashCode = (17 * hashCode) + (verifiedFileFormat == null ? 0 : System.hashCode(verifiedFileFormat));
         hashCode = (17 * hashCode) + (foundViruses == null ? 0 : System.hashCode(foundViruses));
