@@ -63,6 +63,55 @@ public class SwagScanCloudStorageApi {
         );
     }
     /**
+     * Advanced Scan an AWS S3 file for viruses
+     * Advanced Scan the contents of a single AWS S3 file and its content for viruses and threats. Advanced Scan files with 360-degree Content Protection across Viruses and Malware, executables, invalid files, scripts, and even restrictions on accepted file types with complete content verification. Customize threat rules to your needs. Leverage continuously updated signatures for millions of threats, and advanced high-performance scanning capabilities.  Over 17 million virus and malware signatures.  Continuous cloud-based updates.  Block threats beyond viruses including executables, scripts, invalid files, and more.  Optionally limit input files to a specific set of file types (e.g. PDF and Word Documents only).  Wide file format support including Office, PDF, HTML, Flash.  Zip support including .Zip, .Rar, .DMG, .Tar, and other archive formats.  Multi-threat scanning across viruses, malware, trojans, ransomware, and spyware.  High-speed in-memory scanning delivers subsecond typical response time.
+     * @param accessKey AWS S3 access key for the S3 bucket; you can get this from My Security Credentials in the AWS console (required)
+     * @param secretKey AWS S3 secret key for the S3 bucket; you can get this from My Security Credentials in the AWS console (required)
+     * @param bucketRegion Name of the region of the S3 bucket, such as \&#39;US-East-1\&#39; (required)
+     * @param bucketName Name of the S3 bucket (required)
+     * @param keyName Key name (also called file name) of the file in S3 that you wish to scan for viruses (required)
+     * @param allowExecutables Set to false to block executable files (program code) from being allowed in the input file.  Default is false (recommended). (optional)
+     * @param allowInvalidFiles Set to false to block invalid files, such as a PDF file that is not really a valid PDF file, or a Word Document that is not a valid Word Document.  Default is false (recommended). (optional)
+     * @param allowScripts Set to false to block script files, such as a PHP files, Python scripts, and other malicious content or security threats that can be embedded in the file.  Set to true to allow these file types.  Default is false (recommended). (optional)
+     * @param allowPasswordProtectedFiles Set to false to block password protected and encrypted files, such as encrypted zip and rar files, and other files that seek to circumvent scanning through passwords.  Set to true to allow these file types.  Default is false (recommended). (optional)
+     * @param allowMacros Set to false to block macros and other threats embedded in document files, such as Word, Excel and PowerPoint embedded Macros, and other files that contain embedded content threats.  Set to true to allow these file types.  Default is false (recommended). (optional)
+     * @param restrictFileTypes Specify a restricted set of file formats to allow as clean as a comma-separated list of file formats, such as .pdf,.docx,.png would allow only PDF, PNG and Word document files.  All files must pass content verification against this list of file formats, if they do not, then the result will be returned as CleanResult&#x3D;false.  Set restrictFileTypes parameter to null or empty string to disable; default is disabled. (optional)
+     * @return SwagCloudStorageAdvancedVirusScanRes
+     * @throws Swagger.ApiException if fails to make API call
+     */
+    public SwagCloudStorageAdvancedVirusScanRes scanCloudStorageScanAwsS3FileAdvanced(Map<String, Object> params) {
+        client.assertNotNull(params.get('accessKey'), 'accessKey');
+        client.assertNotNull(params.get('secretKey'), 'secretKey');
+        client.assertNotNull(params.get('bucketRegion'), 'bucketRegion');
+        client.assertNotNull(params.get('bucketName'), 'bucketName');
+        client.assertNotNull(params.get('keyName'), 'keyName');
+        List<Swagger.Param> query = new List<Swagger.Param>();
+        List<Swagger.Param> form = new List<Swagger.Param>();
+
+        return (SwagCloudStorageAdvancedVirusScanRes) client.invoke(
+            'POST', '/virus/scan/cloud-storage/aws-s3/single/advanced', '',
+            query, form,
+            new Map<String, Object>(),
+            new Map<String, Object>{
+                'accessKey' => (String) params.get('accessKey'),
+                'secretKey' => (String) params.get('secretKey'),
+                'bucketRegion' => (String) params.get('bucketRegion'),
+                'bucketName' => (String) params.get('bucketName'),
+                'keyName' => (String) params.get('keyName'),
+                'allowExecutables' => (Boolean) params.get('allowExecutables'),
+                'allowInvalidFiles' => (Boolean) params.get('allowInvalidFiles'),
+                'allowScripts' => (Boolean) params.get('allowScripts'),
+                'allowPasswordProtectedFiles' => (Boolean) params.get('allowPasswordProtectedFiles'),
+                'allowMacros' => (Boolean) params.get('allowMacros'),
+                'restrictFileTypes' => (String) params.get('restrictFileTypes')
+            },
+            new List<String>{ 'application/json' },
+            new List<String>{ 'application/json' },
+            new List<String> { 'Apikey' },
+            SwagCloudStorageAdvancedVirusScanRes.class
+        );
+    }
+    /**
      * Scan an Azure Blob for viruses
      * Scan the contents of a single Azure Blob and its content for viruses. Leverage continuously updated signatures for millions of threats, and advanced high-performance scanning capabilities.  Over 17 million virus and malware signatures.  Continuous cloud-based updates.  Wide file format support including Office, PDF, HTML, Flash.  Zip support including .Zip, .Rar, .DMG, .Tar, and other archive formats.  Multi-threat scanning across viruses, malware, trojans, ransomware, and spyware.  High-speed in-memory scanning delivers subsecond typical response time.
      * @param connectionString Connection string for the Azure Blob Storage Account; you can get this connection string from the Access Keys tab of the Storage Account blade in the Azure Portal. (required)
@@ -91,6 +140,49 @@ public class SwagScanCloudStorageApi {
             new List<String>{ 'application/json' },
             new List<String> { 'Apikey' },
             SwagCloudStorageVirusScanResult.class
+        );
+    }
+    /**
+     * Advanced Scan an Azure Blob for viruses
+     * Advanced Scan the contents of a single Azure Blob and its content for viruses and threats.  Advanced Scan files with 360-degree Content Protection across Viruses and Malware, executables, invalid files, scripts, and even restrictions on accepted file types with complete content verification. Customize threat rules to your needs. Leverage continuously updated signatures for millions of threats, and advanced high-performance scanning capabilities.  Over 17 million virus and malware signatures.  Continuous cloud-based updates.  Block threats beyond viruses including executables, scripts, invalid files, and more.  Optionally limit input files to a specific set of file types (e.g. PDF and Word Documents only).  Wide file format support including Office, PDF, HTML, Flash.  Zip support including .Zip, .Rar, .DMG, .Tar, and other archive formats.  Multi-threat scanning across viruses, malware, trojans, ransomware, and spyware.  High-speed in-memory scanning delivers subsecond typical response time.
+     * @param connectionString Connection string for the Azure Blob Storage Account; you can get this connection string from the Access Keys tab of the Storage Account blade in the Azure Portal. (required)
+     * @param containerName Name of the Blob container within the Azure Blob Storage account (required)
+     * @param blobPath Path to the blob within the container, such as \&#39;hello.pdf\&#39; or \&#39;/folder/subfolder/world.pdf\&#39; (required)
+     * @param allowExecutables Set to false to block executable files (program code) from being allowed in the input file.  Default is false (recommended). (optional)
+     * @param allowInvalidFiles Set to false to block invalid files, such as a PDF file that is not really a valid PDF file, or a Word Document that is not a valid Word Document.  Default is false (recommended). (optional)
+     * @param allowScripts Set to false to block script files, such as a PHP files, Python scripts, and other malicious content or security threats that can be embedded in the file.  Set to true to allow these file types.  Default is false (recommended). (optional)
+     * @param allowPasswordProtectedFiles Set to false to block password protected and encrypted files, such as encrypted zip and rar files, and other files that seek to circumvent scanning through passwords.  Set to true to allow these file types.  Default is false (recommended). (optional)
+     * @param allowMacros Set to false to block macros and other threats embedded in document files, such as Word, Excel and PowerPoint embedded Macros, and other files that contain embedded content threats.  Set to true to allow these file types.  Default is false (recommended). (optional)
+     * @param restrictFileTypes Specify a restricted set of file formats to allow as clean as a comma-separated list of file formats, such as .pdf,.docx,.png would allow only PDF, PNG and Word document files.  All files must pass content verification against this list of file formats, if they do not, then the result will be returned as CleanResult&#x3D;false.  Set restrictFileTypes parameter to null or empty string to disable; default is disabled. (optional)
+     * @return SwagCloudStorageAdvancedVirusScanRes
+     * @throws Swagger.ApiException if fails to make API call
+     */
+    public SwagCloudStorageAdvancedVirusScanRes scanCloudStorageScanAzureBlobAdvanced(Map<String, Object> params) {
+        client.assertNotNull(params.get('connectionString'), 'connectionString');
+        client.assertNotNull(params.get('containerName'), 'containerName');
+        client.assertNotNull(params.get('blobPath'), 'blobPath');
+        List<Swagger.Param> query = new List<Swagger.Param>();
+        List<Swagger.Param> form = new List<Swagger.Param>();
+
+        return (SwagCloudStorageAdvancedVirusScanRes) client.invoke(
+            'POST', '/virus/scan/cloud-storage/azure-blob/single/advanced', '',
+            query, form,
+            new Map<String, Object>(),
+            new Map<String, Object>{
+                'connectionString' => (String) params.get('connectionString'),
+                'containerName' => (String) params.get('containerName'),
+                'blobPath' => (String) params.get('blobPath'),
+                'allowExecutables' => (Boolean) params.get('allowExecutables'),
+                'allowInvalidFiles' => (Boolean) params.get('allowInvalidFiles'),
+                'allowScripts' => (Boolean) params.get('allowScripts'),
+                'allowPasswordProtectedFiles' => (Boolean) params.get('allowPasswordProtectedFiles'),
+                'allowMacros' => (Boolean) params.get('allowMacros'),
+                'restrictFileTypes' => (String) params.get('restrictFileTypes')
+            },
+            new List<String>{ 'application/json' },
+            new List<String>{ 'application/json' },
+            new List<String> { 'Apikey' },
+            SwagCloudStorageAdvancedVirusScanRes.class
         );
     }
     /**
@@ -124,6 +216,51 @@ public class SwagScanCloudStorageApi {
             new List<String>{ 'application/x-www-form-urlencoded' },
             new List<String> { 'Apikey' },
             SwagCloudStorageVirusScanResult.class
+        );
+    }
+    /**
+     * Advanced Scan an Google Cloud Platform (GCP) Storage file for viruses
+     * Advanced Scan the contents of a single Google Cloud Platform (GCP) Storage file and its content for viruses and threats. Advanced Scan files with 360-degree Content Protection across Viruses and Malware, executables, invalid files, scripts, and even restrictions on accepted file types with complete content verification. Customize threat rules to your needs. Leverage continuously updated signatures for millions of threats, and advanced high-performance scanning capabilities.  Over 17 million virus and malware signatures.  Continuous cloud-based updates.  Block threats beyond viruses including executables, scripts, invalid files, and more.  Optionally limit input files to a specific set of file types (e.g. PDF and Word Documents only).  Wide file format support including Office, PDF, HTML, Flash.  Zip support including .Zip, .Rar, .DMG, .Tar, and other archive formats.  Multi-threat scanning across viruses, malware, trojans, ransomware, and spyware.  High-speed in-memory scanning delivers subsecond typical response time.
+     * @param bucketName Name of the bucket in Google Cloud Storage (required)
+     * @param objectName Name of the object or file in Google Cloud Storage (required)
+     * @param jsonCredentialFile Service Account credential for Google Cloud stored in a JSON file. (required)
+     * @param allowExecutables Set to false to block executable files (program code) from being allowed in the input file.  Default is false (recommended). (optional)
+     * @param allowInvalidFiles Set to false to block invalid files, such as a PDF file that is not really a valid PDF file, or a Word Document that is not a valid Word Document.  Default is false (recommended). (optional)
+     * @param allowScripts Set to false to block script files, such as a PHP files, Python scripts, and other malicious content or security threats that can be embedded in the file.  Set to true to allow these file types.  Default is false (recommended). (optional)
+     * @param allowPasswordProtectedFiles Set to false to block password protected and encrypted files, such as encrypted zip and rar files, and other files that seek to circumvent scanning through passwords.  Set to true to allow these file types.  Default is false (recommended). (optional)
+     * @param allowMacros Set to false to block macros and other threats embedded in document files, such as Word, Excel and PowerPoint embedded Macros, and other files that contain embedded content threats.  Set to true to allow these file types.  Default is false (recommended). (optional)
+     * @param restrictFileTypes Specify a restricted set of file formats to allow as clean as a comma-separated list of file formats, such as .pdf,.docx,.png would allow only PDF, PNG and Word document files.  All files must pass content verification against this list of file formats, if they do not, then the result will be returned as CleanResult&#x3D;false.  Set restrictFileTypes parameter to null or empty string to disable; default is disabled. (optional)
+     * @return SwagCloudStorageAdvancedVirusScanRes
+     * @throws Swagger.ApiException if fails to make API call
+     */
+    public SwagCloudStorageAdvancedVirusScanRes scanCloudStorageScanGcpStorageFileAdvanced(Map<String, Object> params) {
+        client.assertNotNull(params.get('bucketName'), 'bucketName');
+        client.assertNotNull(params.get('objectName'), 'objectName');
+        client.assertNotNull(params.get('jsonCredentialFile'), 'jsonCredentialFile');
+        List<Swagger.Param> query = new List<Swagger.Param>();
+        List<Swagger.Param> form = new List<Swagger.Param>();
+
+        // cast form params to verify their expected type
+        form.addAll(client.makeParam('jsonCredentialFile', (Blob) params.get('jsonCredentialFile')));
+
+        return (SwagCloudStorageAdvancedVirusScanRes) client.invoke(
+            'POST', '/virus/scan/cloud-storage/gcp-storage/single/advanced', '',
+            query, form,
+            new Map<String, Object>(),
+            new Map<String, Object>{
+                'bucketName' => (String) params.get('bucketName'),
+                'objectName' => (String) params.get('objectName'),
+                'allowExecutables' => (Boolean) params.get('allowExecutables'),
+                'allowInvalidFiles' => (Boolean) params.get('allowInvalidFiles'),
+                'allowScripts' => (Boolean) params.get('allowScripts'),
+                'allowPasswordProtectedFiles' => (Boolean) params.get('allowPasswordProtectedFiles'),
+                'allowMacros' => (Boolean) params.get('allowMacros'),
+                'restrictFileTypes' => (String) params.get('restrictFileTypes')
+            },
+            new List<String>{ 'application/json' },
+            new List<String>{ 'application/x-www-form-urlencoded' },
+            new List<String> { 'Apikey' },
+            SwagCloudStorageAdvancedVirusScanRes.class
         );
     }
 }

@@ -69,12 +69,16 @@ Class | Method | HTTP request | Description
 *SwagScanApi* | [**scanFileAdvanced**](docs/SwagScanApi.md#scanFileAdvanced) | **POST** /virus/scan/file/advanced | Advanced Scan a file for viruses
 *SwagScanApi* | [**scanWebsite**](docs/SwagScanApi.md#scanWebsite) | **POST** /virus/scan/website | Scan a website for malicious content and threats
 *SwagScanCloudStorageApi* | [**scanCloudStorageScanAwsS3File**](docs/SwagScanCloudStorageApi.md#scanCloudStorageScanAwsS3File) | **POST** /virus/scan/cloud-storage/aws-s3/single | Scan an AWS S3 file for viruses
+*SwagScanCloudStorageApi* | [**scanCloudStorageScanAwsS3FileAdvanced**](docs/SwagScanCloudStorageApi.md#scanCloudStorageScanAwsS3FileAdvanced) | **POST** /virus/scan/cloud-storage/aws-s3/single/advanced | Advanced Scan an AWS S3 file for viruses
 *SwagScanCloudStorageApi* | [**scanCloudStorageScanAzureBlob**](docs/SwagScanCloudStorageApi.md#scanCloudStorageScanAzureBlob) | **POST** /virus/scan/cloud-storage/azure-blob/single | Scan an Azure Blob for viruses
+*SwagScanCloudStorageApi* | [**scanCloudStorageScanAzureBlobAdvanced**](docs/SwagScanCloudStorageApi.md#scanCloudStorageScanAzureBlobAdvanced) | **POST** /virus/scan/cloud-storage/azure-blob/single/advanced | Advanced Scan an Azure Blob for viruses
 *SwagScanCloudStorageApi* | [**scanCloudStorageScanGcpStorageFile**](docs/SwagScanCloudStorageApi.md#scanCloudStorageScanGcpStorageFile) | **POST** /virus/scan/cloud-storage/gcp-storage/single | Scan an Google Cloud Platform (GCP) Storage file for viruses
+*SwagScanCloudStorageApi* | [**scanCloudStorageScanGcpStorageFileAdvanced**](docs/SwagScanCloudStorageApi.md#scanCloudStorageScanGcpStorageFileAdvanced) | **POST** /virus/scan/cloud-storage/gcp-storage/single/advanced | Advanced Scan an Google Cloud Platform (GCP) Storage file for viruses
 
 
 ## Documentation for Models
 
+ - [SwagCloudStorageAdvancedVirusScanRes](docs/SwagCloudStorageAdvancedVirusScanRes.md)
  - [SwagCloudStorageVirusFound](docs/SwagCloudStorageVirusFound.md)
  - [SwagCloudStorageVirusScanResult](docs/SwagCloudStorageVirusScanResult.md)
  - [SwagVirusFound](docs/SwagVirusFound.md)
