@@ -57,6 +57,12 @@ public class SwagVirusScanAdvancedResult implements Swagger.MappedProperties {
     public Boolean containsMacros { get; set; }
 
     /**
+     * True if the uploaded file contains embedded XML External Entity threats of other embedded threats within the document, which can be a significant risk factor
+     * @return containsXmlExternalEntities
+     */
+    public Boolean containsXmlExternalEntities { get; set; }
+
+    /**
      * For file format verification-supported file formats, the contents-verified file format of the file.  Null indicates that the file format is not supported for contents verification.  If a Virus or Malware is found, this field will always be set to Null.
      * @return verifiedFileFormat
      */
@@ -76,6 +82,7 @@ public class SwagVirusScanAdvancedResult implements Swagger.MappedProperties {
         'ContainsPasswordProtectedFile' => 'containsPasswordProtectedFile',
         'ContainsRestrictedFileFormat' => 'containsRestrictedFileFormat',
         'ContainsMacros' => 'containsMacros',
+        'ContainsXmlExternalEntities' => 'containsXmlExternalEntities',
         'VerifiedFileFormat' => 'verifiedFileFormat',
         'FoundViruses' => 'foundViruses'
     };
@@ -97,6 +104,7 @@ public class SwagVirusScanAdvancedResult implements Swagger.MappedProperties {
         virusScanAdvancedResult.containsPasswordProtectedFile = true;
         virusScanAdvancedResult.containsRestrictedFileFormat = true;
         virusScanAdvancedResult.containsMacros = true;
+        virusScanAdvancedResult.containsXmlExternalEntities = true;
         virusScanAdvancedResult.verifiedFileFormat = 'aeiou';
         virusScanAdvancedResult.foundViruses = new List<SwagVirusFound>{SwagVirusFound.getExample()};
         return virusScanAdvancedResult;
@@ -112,6 +120,7 @@ public class SwagVirusScanAdvancedResult implements Swagger.MappedProperties {
                 && this.containsPasswordProtectedFile == virusScanAdvancedResult.containsPasswordProtectedFile
                 && this.containsRestrictedFileFormat == virusScanAdvancedResult.containsRestrictedFileFormat
                 && this.containsMacros == virusScanAdvancedResult.containsMacros
+                && this.containsXmlExternalEntities == virusScanAdvancedResult.containsXmlExternalEntities
                 && this.verifiedFileFormat == virusScanAdvancedResult.verifiedFileFormat
                 && this.foundViruses == virusScanAdvancedResult.foundViruses;
         }
@@ -127,6 +136,7 @@ public class SwagVirusScanAdvancedResult implements Swagger.MappedProperties {
         hashCode = (17 * hashCode) + (containsPasswordProtectedFile == null ? 0 : System.hashCode(containsPasswordProtectedFile));
         hashCode = (17 * hashCode) + (containsRestrictedFileFormat == null ? 0 : System.hashCode(containsRestrictedFileFormat));
         hashCode = (17 * hashCode) + (containsMacros == null ? 0 : System.hashCode(containsMacros));
+        hashCode = (17 * hashCode) + (containsXmlExternalEntities == null ? 0 : System.hashCode(containsXmlExternalEntities));
         hashCode = (17 * hashCode) + (verifiedFileFormat == null ? 0 : System.hashCode(verifiedFileFormat));
         hashCode = (17 * hashCode) + (foundViruses == null ? 0 : System.hashCode(foundViruses));
         return hashCode;

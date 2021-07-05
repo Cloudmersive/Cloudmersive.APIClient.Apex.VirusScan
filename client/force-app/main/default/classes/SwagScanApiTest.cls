@@ -52,6 +52,7 @@ private class SwagScanApiTest {
             'allowScripts' => true,
             'allowPasswordProtectedFiles' => true,
             'allowMacros' => true,
+            'allowXmlExternalEntities' => true,
             'restrictFileTypes' => 'restrictFileTypes_example'
         };
 
@@ -66,7 +67,7 @@ private class SwagScanApiTest {
             client.setApiKey('foo-bar-api-key');
 
         res.setHeader('Content-Type', 'application/json');
-        res.setBody('{\r\n  "ContainsInvalidFile" : true,\r\n  "ContainsRestrictedFileFormat" : true,\r\n  "ContainsExecutable" : true,\r\n  "ContainsScript" : true,\r\n  "FoundViruses" : [ {\r\n    "FileName" : "FileName",\r\n    "VirusName" : "VirusName"\r\n  }, {\r\n    "FileName" : "FileName",\r\n    "VirusName" : "VirusName"\r\n  } ],\r\n  "ContainsMacros" : true,\r\n  "VerifiedFileFormat" : "VerifiedFileFormat",\r\n  "ContainsPasswordProtectedFile" : true,\r\n  "CleanResult" : true\r\n}');
+        res.setBody('{\r\n  "ContainsInvalidFile" : true,\r\n  "ContainsRestrictedFileFormat" : true,\r\n  "ContainsExecutable" : true,\r\n  "ContainsScript" : true,\r\n  "FoundViruses" : [ {\r\n    "FileName" : "FileName",\r\n    "VirusName" : "VirusName"\r\n  }, {\r\n    "FileName" : "FileName",\r\n    "VirusName" : "VirusName"\r\n  } ],\r\n  "ContainsMacros" : true,\r\n  "VerifiedFileFormat" : "VerifiedFileFormat",\r\n  "ContainsXmlExternalEntities" : true,\r\n  "ContainsPasswordProtectedFile" : true,\r\n  "CleanResult" : true\r\n}');
         expectedResponse = SwagVirusScanAdvancedResult.getExample();
         response = (SwagVirusScanAdvancedResult) api.scanFileAdvanced(params);
         System.assertEquals(expectedResponse, response);

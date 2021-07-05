@@ -89,6 +89,7 @@ private class SwagVirusScanAdvancedResultTest {
         System.assertEquals('containsPasswordProtectedFile', propertyMappings.get('ContainsPasswordProtectedFile'));
         System.assertEquals('containsRestrictedFileFormat', propertyMappings.get('ContainsRestrictedFileFormat'));
         System.assertEquals('containsMacros', propertyMappings.get('ContainsMacros'));
+        System.assertEquals('containsXmlExternalEntities', propertyMappings.get('ContainsXmlExternalEntities'));
         System.assertEquals('verifiedFileFormat', propertyMappings.get('VerifiedFileFormat'));
         System.assertEquals('foundViruses', propertyMappings.get('FoundViruses'));
     }
@@ -104,6 +105,7 @@ private class SwagVirusScanAdvancedResultTest {
         System.assertEquals(null, virusScanAdvancedResult.containsPasswordProtectedFile);
         System.assertEquals(null, virusScanAdvancedResult.containsRestrictedFileFormat);
         System.assertEquals(null, virusScanAdvancedResult.containsMacros);
+        System.assertEquals(null, virusScanAdvancedResult.containsXmlExternalEntities);
         System.assertEquals(null, virusScanAdvancedResult.verifiedFileFormat);
     }
 }
