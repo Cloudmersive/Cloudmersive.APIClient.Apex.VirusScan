@@ -74,6 +74,8 @@ Class | Method | HTTP request | Description
 *SwagScanCloudStorageApi* | [**scanCloudStorageScanAzureBlobAdvanced**](docs/SwagScanCloudStorageApi.md#scanCloudStorageScanAzureBlobAdvanced) | **POST** /virus/scan/cloud-storage/azure-blob/single/advanced | Advanced Scan an Azure Blob for viruses
 *SwagScanCloudStorageApi* | [**scanCloudStorageScanGcpStorageFile**](docs/SwagScanCloudStorageApi.md#scanCloudStorageScanGcpStorageFile) | **POST** /virus/scan/cloud-storage/gcp-storage/single | Scan an Google Cloud Platform (GCP) Storage file for viruses
 *SwagScanCloudStorageApi* | [**scanCloudStorageScanGcpStorageFileAdvanced**](docs/SwagScanCloudStorageApi.md#scanCloudStorageScanGcpStorageFileAdvanced) | **POST** /virus/scan/cloud-storage/gcp-storage/single/advanced | Advanced Scan an Google Cloud Platform (GCP) Storage file for viruses
+*SwagScanCloudStorageApi* | [**scanCloudStorageScanSharePointOnlineFile**](docs/SwagScanCloudStorageApi.md#scanCloudStorageScanSharePointOnlineFile) | **POST** /virus/scan/cloud-storage/sharepoint-online/site/single | Virus Scan a file in a SharePoint Online Site Drive
+*SwagScanCloudStorageApi* | [**scanCloudStorageScanSharePointOnlineFileAdvanced**](docs/SwagScanCloudStorageApi.md#scanCloudStorageScanSharePointOnlineFileAdvanced) | **POST** /virus/scan/cloud-storage/sharepoint-online/site/advanced | Advanced Virus Scan a file in a SharePoint Online Site Drive
 
 
 ## Documentation for Models
