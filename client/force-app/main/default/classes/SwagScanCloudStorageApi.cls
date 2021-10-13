@@ -278,6 +278,7 @@ public class SwagScanCloudStorageApi {
      * @param siteID Site ID (GUID) of the SharePoint site you wish to retrieve the file from (required)
      * @param filePath Path to the file within the drive, such as \&#39;hello.pdf\&#39; or \&#39;/folder/subfolder/world.pdf\&#39; (required)
      * @param tenantID Optional; Tenant ID of your Azure Active Directory (optional)
+     * @param itemID SharePoint itemID, such as a DriveItem Id (optional)
      * @return SwagCloudStorageVirusScanResult
      * @throws Swagger.ApiException if fails to make API call
      */
@@ -300,7 +301,8 @@ public class SwagScanCloudStorageApi {
                 'sharepointDomainName' => (String) params.get('sharepointDomainName'),
                 'siteID' => (String) params.get('siteID'),
                 'tenantID' => (String) params.get('tenantID'),
-                'filePath' => (String) params.get('filePath')
+                'filePath' => (String) params.get('filePath'),
+                'itemID' => (String) params.get('itemID')
             },
             new List<String>{ 'application/json' },
             new List<String>{ 'application/json' },
@@ -315,8 +317,9 @@ public class SwagScanCloudStorageApi {
      * @param clientSecret Client Secret access credentials; see description above for instructions on how to get the Client Secret from the Azure Active Directory portal (required)
      * @param sharepointDomainName SharePoint Online domain name, such as mydomain.sharepoint.com (required)
      * @param siteID Site ID (GUID) of the SharePoint site you wish to retrieve the file from (required)
-     * @param filePath Path to the file within the drive, such as \&#39;hello.pdf\&#39; or \&#39;/folder/subfolder/world.pdf\&#39; (required)
      * @param tenantID Optional; Tenant ID of your Azure Active Directory (optional)
+     * @param filePath Path to the file within the drive, such as \&#39;hello.pdf\&#39; or \&#39;/folder/subfolder/world.pdf\&#39; (optional)
+     * @param itemID SharePoint itemID, such as a DriveItem Id (optional)
      * @param allowExecutables Set to false to block executable files (program code) from being allowed in the input file.  Default is false (recommended). (optional)
      * @param allowInvalidFiles Set to false to block invalid files, such as a PDF file that is not really a valid PDF file, or a Word Document that is not a valid Word Document.  Default is false (recommended). (optional)
      * @param allowScripts Set to false to block script files, such as a PHP files, Python scripts, and other malicious content or security threats that can be embedded in the file.  Set to true to allow these file types.  Default is false (recommended). (optional)
@@ -332,7 +335,6 @@ public class SwagScanCloudStorageApi {
         client.assertNotNull(params.get('clientSecret'), 'clientSecret');
         client.assertNotNull(params.get('sharepointDomainName'), 'sharepointDomainName');
         client.assertNotNull(params.get('siteID'), 'siteID');
-        client.assertNotNull(params.get('filePath'), 'filePath');
         List<Swagger.Param> query = new List<Swagger.Param>();
         List<Swagger.Param> form = new List<Swagger.Param>();
 
@@ -347,6 +349,7 @@ public class SwagScanCloudStorageApi {
                 'siteID' => (String) params.get('siteID'),
                 'tenantID' => (String) params.get('tenantID'),
                 'filePath' => (String) params.get('filePath'),
+                'itemID' => (String) params.get('itemID'),
                 'allowExecutables' => (Boolean) params.get('allowExecutables'),
                 'allowInvalidFiles' => (Boolean) params.get('allowInvalidFiles'),
                 'allowScripts' => (Boolean) params.get('allowScripts'),

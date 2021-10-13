@@ -384,7 +384,7 @@ Name | Type | Description  | Notes
 
 <a name="scanCloudStorageScanSharePointOnlineFile"></a>
 # **scanCloudStorageScanSharePointOnlineFile**
-> SwagCloudStorageVirusScanResult scanCloudStorageScanSharePointOnlineFile(clientID, clientSecret, sharepointDomainName, siteID, filePath, tenantID)
+> SwagCloudStorageVirusScanResult scanCloudStorageScanSharePointOnlineFile(clientID, clientSecret, sharepointDomainName, siteID, filePath, tenantID, itemID)
 
 Virus Scan a file in a SharePoint Online Site Drive
 
@@ -405,7 +405,8 @@ Map<String, Object> params = new Map<String, Object>{
     'sharepointDomainName' => 'sharepointDomainName_example',
     'siteID' => 'siteID_example',
     'filePath' => 'filePath_example',
-    'tenantID' => 'tenantID_example'
+    'tenantID' => 'tenantID_example',
+    'itemID' => 'itemID_example'
 };
 
 try {
@@ -427,6 +428,7 @@ Name | Type | Description  | Notes
  **siteID** | **String**| Site ID (GUID) of the SharePoint site you wish to retrieve the file from |
  **filePath** | **String**| Path to the file within the drive, such as \&#39;hello.pdf\&#39; or \&#39;/folder/subfolder/world.pdf\&#39; |
  **tenantID** | **String**| Optional; Tenant ID of your Azure Active Directory | [optional]
+ **itemID** | **String**| SharePoint itemID, such as a DriveItem Id | [optional]
 
 ### Return type
 
@@ -443,7 +445,7 @@ Name | Type | Description  | Notes
 
 <a name="scanCloudStorageScanSharePointOnlineFileAdvanced"></a>
 # **scanCloudStorageScanSharePointOnlineFileAdvanced**
-> SwagCloudStorageAdvancedVirusScanRes scanCloudStorageScanSharePointOnlineFileAdvanced(clientID, clientSecret, sharepointDomainName, siteID, filePath, tenantID, allowExecutables, allowInvalidFiles, allowScripts, allowPasswordProtectedFiles, allowMacros, allowXmlExternalEntities, restrictFileTypes)
+> SwagCloudStorageAdvancedVirusScanRes scanCloudStorageScanSharePointOnlineFileAdvanced(clientID, clientSecret, sharepointDomainName, siteID, tenantID, filePath, itemID, allowExecutables, allowInvalidFiles, allowScripts, allowPasswordProtectedFiles, allowMacros, allowXmlExternalEntities, restrictFileTypes)
 
 Advanced Virus Scan a file in a SharePoint Online Site Drive
 
@@ -463,8 +465,9 @@ Map<String, Object> params = new Map<String, Object>{
     'clientSecret' => 'clientSecret_example',
     'sharepointDomainName' => 'sharepointDomainName_example',
     'siteID' => 'siteID_example',
-    'filePath' => 'filePath_example',
     'tenantID' => 'tenantID_example',
+    'filePath' => 'filePath_example',
+    'itemID' => 'itemID_example',
     'allowExecutables' => true,
     'allowInvalidFiles' => true,
     'allowScripts' => true,
@@ -491,8 +494,9 @@ Name | Type | Description  | Notes
  **clientSecret** | **String**| Client Secret access credentials; see description above for instructions on how to get the Client Secret from the Azure Active Directory portal |
  **sharepointDomainName** | **String**| SharePoint Online domain name, such as mydomain.sharepoint.com |
  **siteID** | **String**| Site ID (GUID) of the SharePoint site you wish to retrieve the file from |
- **filePath** | **String**| Path to the file within the drive, such as \&#39;hello.pdf\&#39; or \&#39;/folder/subfolder/world.pdf\&#39; |
  **tenantID** | **String**| Optional; Tenant ID of your Azure Active Directory | [optional]
+ **filePath** | **String**| Path to the file within the drive, such as \&#39;hello.pdf\&#39; or \&#39;/folder/subfolder/world.pdf\&#39; | [optional]
+ **itemID** | **String**| SharePoint itemID, such as a DriveItem Id | [optional]
  **allowExecutables** | **Boolean**| Set to false to block executable files (program code) from being allowed in the input file.  Default is false (recommended). | [optional]
  **allowInvalidFiles** | **Boolean**| Set to false to block invalid files, such as a PDF file that is not really a valid PDF file, or a Word Document that is not a valid Word Document.  Default is false (recommended). | [optional]
  **allowScripts** | **Boolean**| Set to false to block script files, such as a PHP files, Python scripts, and other malicious content or security threats that can be embedded in the file.  Set to true to allow these file types.  Default is false (recommended). | [optional]

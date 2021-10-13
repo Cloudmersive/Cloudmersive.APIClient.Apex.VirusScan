@@ -27,7 +27,7 @@ private class SwagScanApiTest {
             client.setApiKey('foo-bar-api-key');
 
         res.setHeader('Content-Type', 'application/json');
-        res.setBody('{\r\n  "FoundViruses" : [ {\r\n    "FileName" : "FileName",\r\n    "VirusName" : "VirusName"\r\n  }, {\r\n    "FileName" : "FileName",\r\n    "VirusName" : "VirusName"\r\n  } ],\r\n  "CleanResult" : true\r\n}');
+        res.setBody('{"empty": false}');
         expectedResponse = SwagVirusScanResult.getExample();
         response = (SwagVirusScanResult) api.scanFile(params);
         System.assertEquals(expectedResponse, response);
@@ -67,7 +67,7 @@ private class SwagScanApiTest {
             client.setApiKey('foo-bar-api-key');
 
         res.setHeader('Content-Type', 'application/json');
-        res.setBody('{\r\n  "ContainsInvalidFile" : true,\r\n  "ContainsRestrictedFileFormat" : true,\r\n  "ContainsExecutable" : true,\r\n  "ContainsScript" : true,\r\n  "FoundViruses" : [ {\r\n    "FileName" : "FileName",\r\n    "VirusName" : "VirusName"\r\n  }, {\r\n    "FileName" : "FileName",\r\n    "VirusName" : "VirusName"\r\n  } ],\r\n  "ContainsMacros" : true,\r\n  "VerifiedFileFormat" : "VerifiedFileFormat",\r\n  "ContainsXmlExternalEntities" : true,\r\n  "ContainsPasswordProtectedFile" : true,\r\n  "CleanResult" : true\r\n}');
+        res.setBody('{"empty": false}');
         expectedResponse = SwagVirusScanAdvancedResult.getExample();
         response = (SwagVirusScanAdvancedResult) api.scanFileAdvanced(params);
         System.assertEquals(expectedResponse, response);
@@ -100,7 +100,7 @@ private class SwagScanApiTest {
             client.setApiKey('foo-bar-api-key');
 
         res.setHeader('Content-Type', 'application/json');
-        res.setBody('{\r\n  "WebsiteHttpResponseCode" : 0,\r\n  "FoundViruses" : [ {\r\n    "FileName" : "FileName",\r\n    "VirusName" : "VirusName"\r\n  }, {\r\n    "FileName" : "FileName",\r\n    "VirusName" : "VirusName"\r\n  } ],\r\n  "CleanResult" : true,\r\n  "WebsiteThreatType" : "None"\r\n}');
+        res.setBody('{"empty": false}');
         expectedResponse = SwagWebsiteScanResult.getExample();
         response = (SwagWebsiteScanResult) api.scanWebsite(params);
         System.assertEquals(expectedResponse, response);

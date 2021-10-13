@@ -31,7 +31,7 @@ private class SwagScanCloudStorageApiTest {
             client.setApiKey('foo-bar-api-key');
 
         res.setHeader('Content-Type', 'application/json');
-        res.setBody('{\r\n  "ErrorDetailedDescription" : "ErrorDetailedDescription",\r\n  "FoundViruses" : [ {\r\n    "FileName" : "FileName",\r\n    "VirusName" : "VirusName"\r\n  }, {\r\n    "FileName" : "FileName",\r\n    "VirusName" : "VirusName"\r\n  } ],\r\n  "Successful" : true,\r\n  "CleanResult" : true,\r\n  "FileSize" : 0\r\n}');
+        res.setBody('{"empty": false}');
         expectedResponse = SwagCloudStorageVirusScanResult.getExample();
         response = (SwagCloudStorageVirusScanResult) api.scanCloudStorageScanAwsS3File(params);
         System.assertEquals(expectedResponse, response);
@@ -75,7 +75,7 @@ private class SwagScanCloudStorageApiTest {
             client.setApiKey('foo-bar-api-key');
 
         res.setHeader('Content-Type', 'application/json');
-        res.setBody('{\r\n  "ErrorDetailedDescription" : "ErrorDetailedDescription",\r\n  "ContainsInvalidFile" : true,\r\n  "ContainsRestrictedFileFormat" : true,\r\n  "ContainsExecutable" : true,\r\n  "ContainsScript" : true,\r\n  "FoundViruses" : [ {\r\n    "FileName" : "FileName",\r\n    "VirusName" : "VirusName"\r\n  }, {\r\n    "FileName" : "FileName",\r\n    "VirusName" : "VirusName"\r\n  } ],\r\n  "ContainsMacros" : true,\r\n  "VerifiedFileFormat" : "VerifiedFileFormat",\r\n  "Successful" : true,\r\n  "ContainsPasswordProtectedFile" : true,\r\n  "CleanResult" : true,\r\n  "FileSize" : 0\r\n}');
+        res.setBody('{"empty": false}');
         expectedResponse = SwagCloudStorageAdvancedVirusScanRes.getExample();
         response = (SwagCloudStorageAdvancedVirusScanRes) api.scanCloudStorageScanAwsS3FileAdvanced(params);
         System.assertEquals(expectedResponse, response);
@@ -110,7 +110,7 @@ private class SwagScanCloudStorageApiTest {
             client.setApiKey('foo-bar-api-key');
 
         res.setHeader('Content-Type', 'application/json');
-        res.setBody('{\r\n  "ErrorDetailedDescription" : "ErrorDetailedDescription",\r\n  "FoundViruses" : [ {\r\n    "FileName" : "FileName",\r\n    "VirusName" : "VirusName"\r\n  }, {\r\n    "FileName" : "FileName",\r\n    "VirusName" : "VirusName"\r\n  } ],\r\n  "Successful" : true,\r\n  "CleanResult" : true,\r\n  "FileSize" : 0\r\n}');
+        res.setBody('{"empty": false}');
         expectedResponse = SwagCloudStorageVirusScanResult.getExample();
         response = (SwagCloudStorageVirusScanResult) api.scanCloudStorageScanAzureBlob(params);
         System.assertEquals(expectedResponse, response);
@@ -152,7 +152,7 @@ private class SwagScanCloudStorageApiTest {
             client.setApiKey('foo-bar-api-key');
 
         res.setHeader('Content-Type', 'application/json');
-        res.setBody('{\r\n  "ErrorDetailedDescription" : "ErrorDetailedDescription",\r\n  "ContainsInvalidFile" : true,\r\n  "ContainsRestrictedFileFormat" : true,\r\n  "ContainsExecutable" : true,\r\n  "ContainsScript" : true,\r\n  "FoundViruses" : [ {\r\n    "FileName" : "FileName",\r\n    "VirusName" : "VirusName"\r\n  }, {\r\n    "FileName" : "FileName",\r\n    "VirusName" : "VirusName"\r\n  } ],\r\n  "ContainsMacros" : true,\r\n  "VerifiedFileFormat" : "VerifiedFileFormat",\r\n  "Successful" : true,\r\n  "ContainsPasswordProtectedFile" : true,\r\n  "CleanResult" : true,\r\n  "FileSize" : 0\r\n}');
+        res.setBody('{"empty": false}');
         expectedResponse = SwagCloudStorageAdvancedVirusScanRes.getExample();
         response = (SwagCloudStorageAdvancedVirusScanRes) api.scanCloudStorageScanAzureBlobAdvanced(params);
         System.assertEquals(expectedResponse, response);
@@ -187,7 +187,7 @@ private class SwagScanCloudStorageApiTest {
             client.setApiKey('foo-bar-api-key');
 
         res.setHeader('Content-Type', 'application/json');
-        res.setBody('{\r\n  "ErrorDetailedDescription" : "ErrorDetailedDescription",\r\n  "FoundViruses" : [ {\r\n    "FileName" : "FileName",\r\n    "VirusName" : "VirusName"\r\n  }, {\r\n    "FileName" : "FileName",\r\n    "VirusName" : "VirusName"\r\n  } ],\r\n  "Successful" : true,\r\n  "CleanResult" : true,\r\n  "FileSize" : 0\r\n}');
+        res.setBody('{"empty": false}');
         expectedResponse = SwagCloudStorageVirusScanResult.getExample();
         response = (SwagCloudStorageVirusScanResult) api.scanCloudStorageScanGcpStorageFile(params);
         System.assertEquals(expectedResponse, response);
@@ -229,7 +229,7 @@ private class SwagScanCloudStorageApiTest {
             client.setApiKey('foo-bar-api-key');
 
         res.setHeader('Content-Type', 'application/json');
-        res.setBody('{\r\n  "ErrorDetailedDescription" : "ErrorDetailedDescription",\r\n  "ContainsInvalidFile" : true,\r\n  "ContainsRestrictedFileFormat" : true,\r\n  "ContainsExecutable" : true,\r\n  "ContainsScript" : true,\r\n  "FoundViruses" : [ {\r\n    "FileName" : "FileName",\r\n    "VirusName" : "VirusName"\r\n  }, {\r\n    "FileName" : "FileName",\r\n    "VirusName" : "VirusName"\r\n  } ],\r\n  "ContainsMacros" : true,\r\n  "VerifiedFileFormat" : "VerifiedFileFormat",\r\n  "Successful" : true,\r\n  "ContainsPasswordProtectedFile" : true,\r\n  "CleanResult" : true,\r\n  "FileSize" : 0\r\n}');
+        res.setBody('{"empty": false}');
         expectedResponse = SwagCloudStorageAdvancedVirusScanRes.getExample();
         response = (SwagCloudStorageAdvancedVirusScanRes) api.scanCloudStorageScanGcpStorageFileAdvanced(params);
         System.assertEquals(expectedResponse, response);
@@ -253,7 +253,8 @@ private class SwagScanCloudStorageApiTest {
             'sharepointDomainName' => 'sharepointDomainName_example',
             'siteID' => 'siteID_example',
             'filePath' => 'filePath_example',
-            'tenantID' => 'tenantID_example'
+            'tenantID' => 'tenantID_example',
+            'itemID' => 'itemID_example'
         };
 
         SwagClient client;
@@ -267,7 +268,7 @@ private class SwagScanCloudStorageApiTest {
             client.setApiKey('foo-bar-api-key');
 
         res.setHeader('Content-Type', 'application/json');
-        res.setBody('{\r\n  "ErrorDetailedDescription" : "ErrorDetailedDescription",\r\n  "FoundViruses" : [ {\r\n    "FileName" : "FileName",\r\n    "VirusName" : "VirusName"\r\n  }, {\r\n    "FileName" : "FileName",\r\n    "VirusName" : "VirusName"\r\n  } ],\r\n  "Successful" : true,\r\n  "CleanResult" : true,\r\n  "FileSize" : 0\r\n}');
+        res.setBody('{"empty": false}');
         expectedResponse = SwagCloudStorageVirusScanResult.getExample();
         response = (SwagCloudStorageVirusScanResult) api.scanCloudStorageScanSharePointOnlineFile(params);
         System.assertEquals(expectedResponse, response);
@@ -290,8 +291,9 @@ private class SwagScanCloudStorageApiTest {
             'clientSecret' => 'clientSecret_example',
             'sharepointDomainName' => 'sharepointDomainName_example',
             'siteID' => 'siteID_example',
-            'filePath' => 'filePath_example',
             'tenantID' => 'tenantID_example',
+            'filePath' => 'filePath_example',
+            'itemID' => 'itemID_example',
             'allowExecutables' => true,
             'allowInvalidFiles' => true,
             'allowScripts' => true,
@@ -312,7 +314,7 @@ private class SwagScanCloudStorageApiTest {
             client.setApiKey('foo-bar-api-key');
 
         res.setHeader('Content-Type', 'application/json');
-        res.setBody('{\r\n  "ErrorDetailedDescription" : "ErrorDetailedDescription",\r\n  "ContainsInvalidFile" : true,\r\n  "ContainsRestrictedFileFormat" : true,\r\n  "ContainsExecutable" : true,\r\n  "ContainsScript" : true,\r\n  "FoundViruses" : [ {\r\n    "FileName" : "FileName",\r\n    "VirusName" : "VirusName"\r\n  }, {\r\n    "FileName" : "FileName",\r\n    "VirusName" : "VirusName"\r\n  } ],\r\n  "ContainsMacros" : true,\r\n  "VerifiedFileFormat" : "VerifiedFileFormat",\r\n  "Successful" : true,\r\n  "ContainsPasswordProtectedFile" : true,\r\n  "CleanResult" : true,\r\n  "FileSize" : 0\r\n}');
+        res.setBody('{"empty": false}');
         expectedResponse = SwagCloudStorageAdvancedVirusScanRes.getExample();
         response = (SwagCloudStorageAdvancedVirusScanRes) api.scanCloudStorageScanSharePointOnlineFileAdvanced(params);
         System.assertEquals(expectedResponse, response);
