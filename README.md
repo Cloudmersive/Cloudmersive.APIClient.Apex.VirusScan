@@ -80,6 +80,7 @@ Class | Method | HTTP request | Description
 
 ## Documentation for Models
 
+ - [SwagAdditionalAdvancedScanInformatio](docs/SwagAdditionalAdvancedScanInformatio.md)
  - [SwagCloudStorageAdvancedVirusScanRes](docs/SwagCloudStorageAdvancedVirusScanRes.md)
  - [SwagCloudStorageVirusFound](docs/SwagCloudStorageVirusFound.md)
  - [SwagCloudStorageVirusScanResult](docs/SwagCloudStorageVirusScanResult.md)

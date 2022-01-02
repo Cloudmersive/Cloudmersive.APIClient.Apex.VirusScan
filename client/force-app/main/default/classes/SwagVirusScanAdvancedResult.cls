@@ -63,6 +63,18 @@ public class SwagVirusScanAdvancedResult implements Swagger.MappedProperties {
     public Boolean containsXmlExternalEntities { get; set; }
 
     /**
+     * True if the uploaded file contains embedded Insecure Deserialization threats of other embedded threats within the document, which can be a significant risk factor
+     * @return containsInsecureDeserialization
+     */
+    public Boolean containsInsecureDeserialization { get; set; }
+
+    /**
+     * True if the uploaded file contains HTML, which can be a significant risk factor
+     * @return containsHtml
+     */
+    public Boolean containsHtml { get; set; }
+
+    /**
      * For file format verification-supported file formats, the contents-verified file format of the file.  Null indicates that the file format is not supported for contents verification.  If a Virus or Malware is found, this field will always be set to Null.
      * @return verifiedFileFormat
      */
@@ -74,6 +86,12 @@ public class SwagVirusScanAdvancedResult implements Swagger.MappedProperties {
      */
     public List<SwagVirusFound> foundViruses { get; set; }
 
+    /**
+     * Contains additional non-threat content verification information
+     * @return contentInformation
+     */
+    public SwagAdditionalAdvancedScanInformatio contentInformation { get; set; }
+
     private static final Map<String, String> propertyMappings = new Map<String, String>{
         'CleanResult' => 'cleanResult',
         'ContainsExecutable' => 'containsExecutable',
@@ -83,8 +101,11 @@ public class SwagVirusScanAdvancedResult implements Swagger.MappedProperties {
         'ContainsRestrictedFileFormat' => 'containsRestrictedFileFormat',
         'ContainsMacros' => 'containsMacros',
         'ContainsXmlExternalEntities' => 'containsXmlExternalEntities',
+        'ContainsInsecureDeserialization' => 'containsInsecureDeserialization',
+        'ContainsHtml' => 'containsHtml',
         'VerifiedFileFormat' => 'verifiedFileFormat',
-        'FoundViruses' => 'foundViruses'
+        'FoundViruses' => 'foundViruses',
+        'ContentInformation' => 'contentInformation'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -105,8 +126,11 @@ public class SwagVirusScanAdvancedResult implements Swagger.MappedProperties {
         virusScanAdvancedResult.containsRestrictedFileFormat = true;
         virusScanAdvancedResult.containsMacros = true;
         virusScanAdvancedResult.containsXmlExternalEntities = true;
+        virusScanAdvancedResult.containsInsecureDeserialization = true;
+        virusScanAdvancedResult.containsHtml = true;
         virusScanAdvancedResult.verifiedFileFormat = 'aeiou';
         virusScanAdvancedResult.foundViruses = new List<SwagVirusFound>{SwagVirusFound.getExample()};
+        virusScanAdvancedResult.contentInformation = SwagAdditionalAdvancedScanInformatio.getExample();
         return virusScanAdvancedResult;
     }
 
@@ -121,8 +145,11 @@ public class SwagVirusScanAdvancedResult implements Swagger.MappedProperties {
                 && this.containsRestrictedFileFormat == virusScanAdvancedResult.containsRestrictedFileFormat
                 && this.containsMacros == virusScanAdvancedResult.containsMacros
                 && this.containsXmlExternalEntities == virusScanAdvancedResult.containsXmlExternalEntities
+                && this.containsInsecureDeserialization == virusScanAdvancedResult.containsInsecureDeserialization
+                && this.containsHtml == virusScanAdvancedResult.containsHtml
                 && this.verifiedFileFormat == virusScanAdvancedResult.verifiedFileFormat
-                && this.foundViruses == virusScanAdvancedResult.foundViruses;
+                && this.foundViruses == virusScanAdvancedResult.foundViruses
+                && this.contentInformation == virusScanAdvancedResult.contentInformation;
         }
         return false;
     }
@@ -137,8 +164,11 @@ public class SwagVirusScanAdvancedResult implements Swagger.MappedProperties {
         hashCode = (17 * hashCode) + (containsRestrictedFileFormat == null ? 0 : System.hashCode(containsRestrictedFileFormat));
         hashCode = (17 * hashCode) + (containsMacros == null ? 0 : System.hashCode(containsMacros));
         hashCode = (17 * hashCode) + (containsXmlExternalEntities == null ? 0 : System.hashCode(containsXmlExternalEntities));
+        hashCode = (17 * hashCode) + (containsInsecureDeserialization == null ? 0 : System.hashCode(containsInsecureDeserialization));
+        hashCode = (17 * hashCode) + (containsHtml == null ? 0 : System.hashCode(containsHtml));
         hashCode = (17 * hashCode) + (verifiedFileFormat == null ? 0 : System.hashCode(verifiedFileFormat));
         hashCode = (17 * hashCode) + (foundViruses == null ? 0 : System.hashCode(foundViruses));
+        hashCode = (17 * hashCode) + (contentInformation == null ? 0 : System.hashCode(contentInformation));
         return hashCode;
     }
 }

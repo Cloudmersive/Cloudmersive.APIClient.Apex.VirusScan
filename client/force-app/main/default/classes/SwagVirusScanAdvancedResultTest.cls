@@ -90,8 +90,11 @@ private class SwagVirusScanAdvancedResultTest {
         System.assertEquals('containsRestrictedFileFormat', propertyMappings.get('ContainsRestrictedFileFormat'));
         System.assertEquals('containsMacros', propertyMappings.get('ContainsMacros'));
         System.assertEquals('containsXmlExternalEntities', propertyMappings.get('ContainsXmlExternalEntities'));
+        System.assertEquals('containsInsecureDeserialization', propertyMappings.get('ContainsInsecureDeserialization'));
+        System.assertEquals('containsHtml', propertyMappings.get('ContainsHtml'));
         System.assertEquals('verifiedFileFormat', propertyMappings.get('VerifiedFileFormat'));
         System.assertEquals('foundViruses', propertyMappings.get('FoundViruses'));
+        System.assertEquals('contentInformation', propertyMappings.get('ContentInformation'));
     }
 
     @isTest
@@ -106,6 +109,9 @@ private class SwagVirusScanAdvancedResultTest {
         System.assertEquals(null, virusScanAdvancedResult.containsRestrictedFileFormat);
         System.assertEquals(null, virusScanAdvancedResult.containsMacros);
         System.assertEquals(null, virusScanAdvancedResult.containsXmlExternalEntities);
+        System.assertEquals(null, virusScanAdvancedResult.containsInsecureDeserialization);
+        System.assertEquals(null, virusScanAdvancedResult.containsHtml);
         System.assertEquals(null, virusScanAdvancedResult.verifiedFileFormat);
+        System.assertEquals(null, virusScanAdvancedResult.contentInformation);
     }
 }
