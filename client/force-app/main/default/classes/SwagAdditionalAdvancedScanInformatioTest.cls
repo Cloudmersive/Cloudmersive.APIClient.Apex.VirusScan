@@ -84,5 +84,6 @@ private class SwagAdditionalAdvancedScanInformatioTest {
         Map<String, String> propertyMappings = additionalAdvancedScanInformation.getPropertyMappings();
         System.assertEquals('containsJSON', propertyMappings.get('ContainsJSON'));
         System.assertEquals('containsXML', propertyMappings.get('ContainsXML'));
+        System.assertEquals('containsImage', propertyMappings.get('ContainsImage'));
     }
 }

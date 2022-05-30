@@ -44,12 +44,19 @@ public class SwagCloudStorageVirusScanResult implements Swagger.MappedProperties
      */
     public Long fileSize { get; set; }
 
+    /**
+     * Set to true when using NSFW Content Moderation in the Cloudmersive Storage Protect product (disabled by default)
+     * @return containsContentModerationRejection
+     */
+    public Boolean containsContentModerationRejection { get; set; }
+
     private static final Map<String, String> propertyMappings = new Map<String, String>{
         'Successful' => 'successful',
         'CleanResult' => 'cleanResult',
         'FoundViruses' => 'foundViruses',
         'ErrorDetailedDescription' => 'errorDetailedDescription',
-        'FileSize' => 'fileSize'
+        'FileSize' => 'fileSize',
+        'ContainsContentModerationRejection' => 'containsContentModerationRejection'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -67,6 +74,7 @@ public class SwagCloudStorageVirusScanResult implements Swagger.MappedProperties
         cloudStorageVirusScanResult.foundViruses = new List<SwagCloudStorageVirusFound>{SwagCloudStorageVirusFound.getExample()};
         cloudStorageVirusScanResult.errorDetailedDescription = 'aeiou';
         cloudStorageVirusScanResult.fileSize = 123456789L;
+        cloudStorageVirusScanResult.containsContentModerationRejection = true;
         return cloudStorageVirusScanResult;
     }
 
@@ -77,7 +85,8 @@ public class SwagCloudStorageVirusScanResult implements Swagger.MappedProperties
                 && this.cleanResult == cloudStorageVirusScanResult.cleanResult
                 && this.foundViruses == cloudStorageVirusScanResult.foundViruses
                 && this.errorDetailedDescription == cloudStorageVirusScanResult.errorDetailedDescription
-                && this.fileSize == cloudStorageVirusScanResult.fileSize;
+                && this.fileSize == cloudStorageVirusScanResult.fileSize
+                && this.containsContentModerationRejection == cloudStorageVirusScanResult.containsContentModerationRejection;
         }
         return false;
     }
@@ -89,6 +98,7 @@ public class SwagCloudStorageVirusScanResult implements Swagger.MappedProperties
         hashCode = (17 * hashCode) + (foundViruses == null ? 0 : System.hashCode(foundViruses));
         hashCode = (17 * hashCode) + (errorDetailedDescription == null ? 0 : System.hashCode(errorDetailedDescription));
         hashCode = (17 * hashCode) + (fileSize == null ? 0 : System.hashCode(fileSize));
+        hashCode = (17 * hashCode) + (containsContentModerationRejection == null ? 0 : System.hashCode(containsContentModerationRejection));
         return hashCode;
     }
 }

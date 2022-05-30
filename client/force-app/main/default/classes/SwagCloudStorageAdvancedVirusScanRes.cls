@@ -86,6 +86,12 @@ public class SwagCloudStorageAdvancedVirusScanRes implements Swagger.MappedPrope
      */
     public Long fileSize { get; set; }
 
+    /**
+     * Contains additional non-threat content verification information
+     * @return contentInformation
+     */
+    public SwagAdditionalAdvancedScanInformatio contentInformation { get; set; }
+
     private static final Map<String, String> propertyMappings = new Map<String, String>{
         'Successful' => 'successful',
         'CleanResult' => 'cleanResult',
@@ -98,7 +104,8 @@ public class SwagCloudStorageAdvancedVirusScanRes implements Swagger.MappedPrope
         'VerifiedFileFormat' => 'verifiedFileFormat',
         'FoundViruses' => 'foundViruses',
         'ErrorDetailedDescription' => 'errorDetailedDescription',
-        'FileSize' => 'fileSize'
+        'FileSize' => 'fileSize',
+        'ContentInformation' => 'contentInformation'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -123,6 +130,7 @@ public class SwagCloudStorageAdvancedVirusScanRes implements Swagger.MappedPrope
         cloudStorageAdvancedVirusScanResult.foundViruses = new List<SwagCloudStorageVirusFound>{SwagCloudStorageVirusFound.getExample()};
         cloudStorageAdvancedVirusScanResult.errorDetailedDescription = 'aeiou';
         cloudStorageAdvancedVirusScanResult.fileSize = 123456789L;
+        cloudStorageAdvancedVirusScanResult.contentInformation = SwagAdditionalAdvancedScanInformatio.getExample();
         return cloudStorageAdvancedVirusScanResult;
     }
 
@@ -140,7 +148,8 @@ public class SwagCloudStorageAdvancedVirusScanRes implements Swagger.MappedPrope
                 && this.verifiedFileFormat == cloudStorageAdvancedVirusScanResult.verifiedFileFormat
                 && this.foundViruses == cloudStorageAdvancedVirusScanResult.foundViruses
                 && this.errorDetailedDescription == cloudStorageAdvancedVirusScanResult.errorDetailedDescription
-                && this.fileSize == cloudStorageAdvancedVirusScanResult.fileSize;
+                && this.fileSize == cloudStorageAdvancedVirusScanResult.fileSize
+                && this.contentInformation == cloudStorageAdvancedVirusScanResult.contentInformation;
         }
         return false;
     }
@@ -159,6 +168,7 @@ public class SwagCloudStorageAdvancedVirusScanRes implements Swagger.MappedPrope
         hashCode = (17 * hashCode) + (foundViruses == null ? 0 : System.hashCode(foundViruses));
         hashCode = (17 * hashCode) + (errorDetailedDescription == null ? 0 : System.hashCode(errorDetailedDescription));
         hashCode = (17 * hashCode) + (fileSize == null ? 0 : System.hashCode(fileSize));
+        hashCode = (17 * hashCode) + (contentInformation == null ? 0 : System.hashCode(contentInformation));
         return hashCode;
     }
 }

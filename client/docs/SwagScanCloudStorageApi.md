@@ -56,7 +56,7 @@ Name | Type | Description  | Notes
  **secretKey** | **String**| AWS S3 secret key for the S3 bucket; you can get this from My Security Credentials in the AWS console |
  **bucketRegion** | **String**| Name of the region of the S3 bucket, such as \&#39;US-East-1\&#39; |
  **bucketName** | **String**| Name of the S3 bucket |
- **keyName** | **String**| Key name (also called file name) of the file in S3 that you wish to scan for viruses |
+ **keyName** | **String**| Key name (also called file name) of the file in S3 that you wish to scan for viruses.  If the key name contains Unicode characters, you must base64 encode the key name and prepend it with \&#39;base64:\&#39;, such as: \&#39;base64:6ZWV6ZWV6ZWV6ZWV6ZWV6ZWV\&#39;. |
 
 ### Return type
 
@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
  **secretKey** | **String**| AWS S3 secret key for the S3 bucket; you can get this from My Security Credentials in the AWS console |
  **bucketRegion** | **String**| Name of the region of the S3 bucket, such as \&#39;US-East-1\&#39; |
  **bucketName** | **String**| Name of the S3 bucket |
- **keyName** | **String**| Key name (also called file name) of the file in S3 that you wish to scan for viruses |
+ **keyName** | **String**| Key name (also called file name) of the file in S3 that you wish to scan for viruses.  If the key name contains Unicode characters, you must base64 encode the key name and prepend it with \&#39;base64:\&#39;, such as: \&#39;base64:6ZWV6ZWV6ZWV6ZWV6ZWV6ZWV\&#39;. |
  **allowExecutables** | **Boolean**| Set to false to block executable files (program code) from being allowed in the input file.  Default is false (recommended). | [optional]
  **allowInvalidFiles** | **Boolean**| Set to false to block invalid files, such as a PDF file that is not really a valid PDF file, or a Word Document that is not a valid Word Document.  Default is false (recommended). | [optional]
  **allowScripts** | **Boolean**| Set to false to block script files, such as a PHP files, Python scripts, and other malicious content or security threats that can be embedded in the file.  Set to true to allow these file types.  Default is false (recommended). | [optional]
@@ -180,7 +180,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **connectionString** | **String**| Connection string for the Azure Blob Storage Account; you can get this connection string from the Access Keys tab of the Storage Account blade in the Azure Portal. |
  **containerName** | **String**| Name of the Blob container within the Azure Blob Storage account |
- **blobPath** | **String**| Path to the blob within the container, such as \&#39;hello.pdf\&#39; or \&#39;/folder/subfolder/world.pdf\&#39; |
+ **blobPath** | **String**| Path to the blob within the container, such as \&#39;hello.pdf\&#39; or \&#39;/folder/subfolder/world.pdf\&#39;.  If the blob path contains Unicode characters, you must base64 encode the blob path and prepend it with \&#39;base64:\&#39;, such as: \&#39;base64:6ZWV6ZWV6ZWV6ZWV6ZWV6ZWV\&#39;. |
 
 ### Return type
 
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **connectionString** | **String**| Connection string for the Azure Blob Storage Account; you can get this connection string from the Access Keys tab of the Storage Account blade in the Azure Portal. |
  **containerName** | **String**| Name of the Blob container within the Azure Blob Storage account |
- **blobPath** | **String**| Path to the blob within the container, such as \&#39;hello.pdf\&#39; or \&#39;/folder/subfolder/world.pdf\&#39; |
+ **blobPath** | **String**| Path to the blob within the container, such as \&#39;hello.pdf\&#39; or \&#39;/folder/subfolder/world.pdf\&#39;.  If the blob path contains Unicode characters, you must base64 encode the blob path and prepend it with \&#39;base64:\&#39;, such as: \&#39;base64:6ZWV6ZWV6ZWV6ZWV6ZWV6ZWV\&#39;. |
  **allowExecutables** | **Boolean**| Set to false to block executable files (program code) from being allowed in the input file.  Default is false (recommended). | [optional]
  **allowInvalidFiles** | **Boolean**| Set to false to block invalid files, such as a PDF file that is not really a valid PDF file, or a Word Document that is not a valid Word Document.  Default is false (recommended). | [optional]
  **allowScripts** | **Boolean**| Set to false to block script files, such as a PHP files, Python scripts, and other malicious content or security threats that can be embedded in the file.  Set to true to allow these file types.  Default is false (recommended). | [optional]
@@ -299,7 +299,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bucketName** | **String**| Name of the bucket in Google Cloud Storage |
- **objectName** | **String**| Name of the object or file in Google Cloud Storage |
+ **objectName** | **String**| Name of the object or file in Google Cloud Storage.  If the object name contains Unicode characters, you must base64 encode the object name and prepend it with \&#39;base64:\&#39;, such as: \&#39;base64:6ZWV6ZWV6ZWV6ZWV6ZWV6ZWV\&#39;. |
  **jsonCredentialFile** | **Blob**| Service Account credential for Google Cloud stored in a JSON file. |
 
 ### Return type
@@ -359,7 +359,7 @@ try {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bucketName** | **String**| Name of the bucket in Google Cloud Storage |
- **objectName** | **String**| Name of the object or file in Google Cloud Storage |
+ **objectName** | **String**| Name of the object or file in Google Cloud Storage.  If the object name contains Unicode characters, you must base64 encode the object name and prepend it with \&#39;base64:\&#39;, such as: \&#39;base64:6ZWV6ZWV6ZWV6ZWV6ZWV6ZWV\&#39;. |
  **jsonCredentialFile** | **Blob**| Service Account credential for Google Cloud stored in a JSON file. |
  **allowExecutables** | **Boolean**| Set to false to block executable files (program code) from being allowed in the input file.  Default is false (recommended). | [optional]
  **allowInvalidFiles** | **Boolean**| Set to false to block invalid files, such as a PDF file that is not really a valid PDF file, or a Word Document that is not a valid Word Document.  Default is false (recommended). | [optional]
@@ -426,7 +426,7 @@ Name | Type | Description  | Notes
  **clientSecret** | **String**| Client Secret access credentials; see description above for instructions on how to get the Client Secret from the Azure Active Directory portal |
  **sharepointDomainName** | **String**| SharePoint Online domain name, such as mydomain.sharepoint.com |
  **siteID** | **String**| Site ID (GUID) of the SharePoint site you wish to retrieve the file from |
- **filePath** | **String**| Path to the file within the drive, such as \&#39;hello.pdf\&#39; or \&#39;/folder/subfolder/world.pdf\&#39; |
+ **filePath** | **String**| Path to the file within the drive, such as \&#39;hello.pdf\&#39; or \&#39;/folder/subfolder/world.pdf\&#39;.  If the file path contains Unicode characters, you must base64 encode the file path and prepend it with \&#39;base64:\&#39;, such as: \&#39;base64:6ZWV6ZWV6ZWV6ZWV6ZWV6ZWV\&#39;. |
  **tenantID** | **String**| Optional; Tenant ID of your Azure Active Directory | [optional]
  **itemID** | **String**| SharePoint itemID, such as a DriveItem Id | [optional]
 
@@ -495,7 +495,7 @@ Name | Type | Description  | Notes
  **sharepointDomainName** | **String**| SharePoint Online domain name, such as mydomain.sharepoint.com |
  **siteID** | **String**| Site ID (GUID) of the SharePoint site you wish to retrieve the file from |
  **tenantID** | **String**| Optional; Tenant ID of your Azure Active Directory | [optional]
- **filePath** | **String**| Path to the file within the drive, such as \&#39;hello.pdf\&#39; or \&#39;/folder/subfolder/world.pdf\&#39; | [optional]
+ **filePath** | **String**| Path to the file within the drive, such as \&#39;hello.pdf\&#39; or \&#39;/folder/subfolder/world.pdf\&#39;.  If the file path contains Unicode characters, you must base64 encode the file path and prepend it with \&#39;base64:\&#39;, such as: \&#39;base64:6ZWV6ZWV6ZWV6ZWV6ZWV6ZWV\&#39;. | [optional]
  **itemID** | **String**| SharePoint itemID, such as a DriveItem Id | [optional]
  **allowExecutables** | **Boolean**| Set to false to block executable files (program code) from being allowed in the input file.  Default is false (recommended). | [optional]
  **allowInvalidFiles** | **Boolean**| Set to false to block invalid files, such as a PDF file that is not really a valid PDF file, or a Word Document that is not a valid Word Document.  Default is false (recommended). | [optional]

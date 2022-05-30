@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **foundViruses** | [**List&lt;SwagCloudStorageVirusFound&gt;**](SwagCloudStorageVirusFound.md) | Array of viruses found, if any |  [optional]
 **errorDetailedDescription** | **String** | Detailed error message if the operation was not successful |  [optional]
 **fileSize** | **Long** | Size in bytes of the file that was retrieved and scanned |  [optional]
+**contentInformation** | [**SwagAdditionalAdvancedScanInformatio**](SwagAdditionalAdvancedScanInformatio.md) | Contains additional non-threat content verification information |  [optional]
 
 
 

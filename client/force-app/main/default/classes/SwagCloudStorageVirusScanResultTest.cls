@@ -87,6 +87,7 @@ private class SwagCloudStorageVirusScanResultTest {
         System.assertEquals('foundViruses', propertyMappings.get('FoundViruses'));
         System.assertEquals('errorDetailedDescription', propertyMappings.get('ErrorDetailedDescription'));
         System.assertEquals('fileSize', propertyMappings.get('FileSize'));
+        System.assertEquals('containsContentModerationRejection', propertyMappings.get('ContainsContentModerationRejection'));
     }
 
     @isTest
@@ -97,5 +98,6 @@ private class SwagCloudStorageVirusScanResultTest {
         System.assertEquals(null, cloudStorageVirusScanResult.cleanResult);
         System.assertEquals(null, cloudStorageVirusScanResult.errorDetailedDescription);
         System.assertEquals(null, cloudStorageVirusScanResult.fileSize);
+        System.assertEquals(null, cloudStorageVirusScanResult.containsContentModerationRejection);
     }
 }

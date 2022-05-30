@@ -32,7 +32,7 @@ public class SwagScanCloudStorageApi {
      * @param secretKey AWS S3 secret key for the S3 bucket; you can get this from My Security Credentials in the AWS console (required)
      * @param bucketRegion Name of the region of the S3 bucket, such as \&#39;US-East-1\&#39; (required)
      * @param bucketName Name of the S3 bucket (required)
-     * @param keyName Key name (also called file name) of the file in S3 that you wish to scan for viruses (required)
+     * @param keyName Key name (also called file name) of the file in S3 that you wish to scan for viruses.  If the key name contains Unicode characters, you must base64 encode the key name and prepend it with \&#39;base64:\&#39;, such as: \&#39;base64:6ZWV6ZWV6ZWV6ZWV6ZWV6ZWV\&#39;. (required)
      * @return SwagCloudStorageVirusScanResult
      * @throws Swagger.ApiException if fails to make API call
      */
@@ -69,7 +69,7 @@ public class SwagScanCloudStorageApi {
      * @param secretKey AWS S3 secret key for the S3 bucket; you can get this from My Security Credentials in the AWS console (required)
      * @param bucketRegion Name of the region of the S3 bucket, such as \&#39;US-East-1\&#39; (required)
      * @param bucketName Name of the S3 bucket (required)
-     * @param keyName Key name (also called file name) of the file in S3 that you wish to scan for viruses (required)
+     * @param keyName Key name (also called file name) of the file in S3 that you wish to scan for viruses.  If the key name contains Unicode characters, you must base64 encode the key name and prepend it with \&#39;base64:\&#39;, such as: \&#39;base64:6ZWV6ZWV6ZWV6ZWV6ZWV6ZWV\&#39;. (required)
      * @param allowExecutables Set to false to block executable files (program code) from being allowed in the input file.  Default is false (recommended). (optional)
      * @param allowInvalidFiles Set to false to block invalid files, such as a PDF file that is not really a valid PDF file, or a Word Document that is not a valid Word Document.  Default is false (recommended). (optional)
      * @param allowScripts Set to false to block script files, such as a PHP files, Python scripts, and other malicious content or security threats that can be embedded in the file.  Set to true to allow these file types.  Default is false (recommended). (optional)
@@ -118,7 +118,7 @@ public class SwagScanCloudStorageApi {
      * Scan the contents of a single Azure Blob and its content for viruses. Leverage continuously updated signatures for millions of threats, and advanced high-performance scanning capabilities.  Over 17 million virus and malware signatures.  Continuous cloud-based updates.  Wide file format support including Office, PDF, HTML, Flash.  Zip support including .Zip, .Rar, .DMG, .Tar, and other archive formats.  Multi-threat scanning across viruses, malware, trojans, ransomware, and spyware.  High-speed in-memory scanning delivers subsecond typical response time.
      * @param connectionString Connection string for the Azure Blob Storage Account; you can get this connection string from the Access Keys tab of the Storage Account blade in the Azure Portal. (required)
      * @param containerName Name of the Blob container within the Azure Blob Storage account (required)
-     * @param blobPath Path to the blob within the container, such as \&#39;hello.pdf\&#39; or \&#39;/folder/subfolder/world.pdf\&#39; (required)
+     * @param blobPath Path to the blob within the container, such as \&#39;hello.pdf\&#39; or \&#39;/folder/subfolder/world.pdf\&#39;.  If the blob path contains Unicode characters, you must base64 encode the blob path and prepend it with \&#39;base64:\&#39;, such as: \&#39;base64:6ZWV6ZWV6ZWV6ZWV6ZWV6ZWV\&#39;. (required)
      * @return SwagCloudStorageVirusScanResult
      * @throws Swagger.ApiException if fails to make API call
      */
@@ -149,7 +149,7 @@ public class SwagScanCloudStorageApi {
      * Advanced Scan the contents of a single Azure Blob and its content for viruses and threats.  Advanced Scan files with 360-degree Content Protection across Viruses and Malware, executables, invalid files, scripts, and even restrictions on accepted file types with complete content verification. Customize threat rules to your needs. Leverage continuously updated signatures for millions of threats, and advanced high-performance scanning capabilities.  Over 17 million virus and malware signatures.  Continuous cloud-based updates.  Block threats beyond viruses including executables, scripts, invalid files, and more.  Optionally limit input files to a specific set of file types (e.g. PDF and Word Documents only).  Wide file format support including Office, PDF, HTML, Flash.  Zip support including .Zip, .Rar, .DMG, .Tar, and other archive formats.  Multi-threat scanning across viruses, malware, trojans, ransomware, and spyware.  High-speed in-memory scanning delivers subsecond typical response time.
      * @param connectionString Connection string for the Azure Blob Storage Account; you can get this connection string from the Access Keys tab of the Storage Account blade in the Azure Portal. (required)
      * @param containerName Name of the Blob container within the Azure Blob Storage account (required)
-     * @param blobPath Path to the blob within the container, such as \&#39;hello.pdf\&#39; or \&#39;/folder/subfolder/world.pdf\&#39; (required)
+     * @param blobPath Path to the blob within the container, such as \&#39;hello.pdf\&#39; or \&#39;/folder/subfolder/world.pdf\&#39;.  If the blob path contains Unicode characters, you must base64 encode the blob path and prepend it with \&#39;base64:\&#39;, such as: \&#39;base64:6ZWV6ZWV6ZWV6ZWV6ZWV6ZWV\&#39;. (required)
      * @param allowExecutables Set to false to block executable files (program code) from being allowed in the input file.  Default is false (recommended). (optional)
      * @param allowInvalidFiles Set to false to block invalid files, such as a PDF file that is not really a valid PDF file, or a Word Document that is not a valid Word Document.  Default is false (recommended). (optional)
      * @param allowScripts Set to false to block script files, such as a PHP files, Python scripts, and other malicious content or security threats that can be embedded in the file.  Set to true to allow these file types.  Default is false (recommended). (optional)
@@ -193,7 +193,7 @@ public class SwagScanCloudStorageApi {
      * Scan an Google Cloud Platform (GCP) Storage file for viruses
      * Scan the contents of a single Google Cloud Platform (GCP) Storage file and its content for viruses. Leverage continuously updated signatures for millions of threats, and advanced high-performance scanning capabilities.  Over 17 million virus and malware signatures.  Continuous cloud-based updates.  Wide file format support including Office, PDF, HTML, Flash.  Zip support including .Zip, .Rar, .DMG, .Tar, and other archive formats.  Multi-threat scanning across viruses, malware, trojans, ransomware, and spyware.  High-speed in-memory scanning delivers subsecond typical response time.
      * @param bucketName Name of the bucket in Google Cloud Storage (required)
-     * @param objectName Name of the object or file in Google Cloud Storage (required)
+     * @param objectName Name of the object or file in Google Cloud Storage.  If the object name contains Unicode characters, you must base64 encode the object name and prepend it with \&#39;base64:\&#39;, such as: \&#39;base64:6ZWV6ZWV6ZWV6ZWV6ZWV6ZWV\&#39;. (required)
      * @param jsonCredentialFile Service Account credential for Google Cloud stored in a JSON file. (required)
      * @return SwagCloudStorageVirusScanResult
      * @throws Swagger.ApiException if fails to make API call
@@ -226,7 +226,7 @@ public class SwagScanCloudStorageApi {
      * Advanced Scan an Google Cloud Platform (GCP) Storage file for viruses
      * Advanced Scan the contents of a single Google Cloud Platform (GCP) Storage file and its content for viruses and threats. Advanced Scan files with 360-degree Content Protection across Viruses and Malware, executables, invalid files, scripts, and even restrictions on accepted file types with complete content verification. Customize threat rules to your needs. Leverage continuously updated signatures for millions of threats, and advanced high-performance scanning capabilities.  Over 17 million virus and malware signatures.  Continuous cloud-based updates.  Block threats beyond viruses including executables, scripts, invalid files, and more.  Optionally limit input files to a specific set of file types (e.g. PDF and Word Documents only).  Wide file format support including Office, PDF, HTML, Flash.  Zip support including .Zip, .Rar, .DMG, .Tar, and other archive formats.  Multi-threat scanning across viruses, malware, trojans, ransomware, and spyware.  High-speed in-memory scanning delivers subsecond typical response time.
      * @param bucketName Name of the bucket in Google Cloud Storage (required)
-     * @param objectName Name of the object or file in Google Cloud Storage (required)
+     * @param objectName Name of the object or file in Google Cloud Storage.  If the object name contains Unicode characters, you must base64 encode the object name and prepend it with \&#39;base64:\&#39;, such as: \&#39;base64:6ZWV6ZWV6ZWV6ZWV6ZWV6ZWV\&#39;. (required)
      * @param jsonCredentialFile Service Account credential for Google Cloud stored in a JSON file. (required)
      * @param allowExecutables Set to false to block executable files (program code) from being allowed in the input file.  Default is false (recommended). (optional)
      * @param allowInvalidFiles Set to false to block invalid files, such as a PDF file that is not really a valid PDF file, or a Word Document that is not a valid Word Document.  Default is false (recommended). (optional)
@@ -276,7 +276,7 @@ public class SwagScanCloudStorageApi {
      * @param clientSecret Client Secret access credentials; see description above for instructions on how to get the Client Secret from the Azure Active Directory portal (required)
      * @param sharepointDomainName SharePoint Online domain name, such as mydomain.sharepoint.com (required)
      * @param siteID Site ID (GUID) of the SharePoint site you wish to retrieve the file from (required)
-     * @param filePath Path to the file within the drive, such as \&#39;hello.pdf\&#39; or \&#39;/folder/subfolder/world.pdf\&#39; (required)
+     * @param filePath Path to the file within the drive, such as \&#39;hello.pdf\&#39; or \&#39;/folder/subfolder/world.pdf\&#39;.  If the file path contains Unicode characters, you must base64 encode the file path and prepend it with \&#39;base64:\&#39;, such as: \&#39;base64:6ZWV6ZWV6ZWV6ZWV6ZWV6ZWV\&#39;. (required)
      * @param tenantID Optional; Tenant ID of your Azure Active Directory (optional)
      * @param itemID SharePoint itemID, such as a DriveItem Id (optional)
      * @return SwagCloudStorageVirusScanResult
@@ -318,7 +318,7 @@ public class SwagScanCloudStorageApi {
      * @param sharepointDomainName SharePoint Online domain name, such as mydomain.sharepoint.com (required)
      * @param siteID Site ID (GUID) of the SharePoint site you wish to retrieve the file from (required)
      * @param tenantID Optional; Tenant ID of your Azure Active Directory (optional)
-     * @param filePath Path to the file within the drive, such as \&#39;hello.pdf\&#39; or \&#39;/folder/subfolder/world.pdf\&#39; (optional)
+     * @param filePath Path to the file within the drive, such as \&#39;hello.pdf\&#39; or \&#39;/folder/subfolder/world.pdf\&#39;.  If the file path contains Unicode characters, you must base64 encode the file path and prepend it with \&#39;base64:\&#39;, such as: \&#39;base64:6ZWV6ZWV6ZWV6ZWV6ZWV6ZWV\&#39;. (optional)
      * @param itemID SharePoint itemID, such as a DriveItem Id (optional)
      * @param allowExecutables Set to false to block executable files (program code) from being allowed in the input file.  Default is false (recommended). (optional)
      * @param allowInvalidFiles Set to false to block invalid files, such as a PDF file that is not really a valid PDF file, or a Word Document that is not a valid Word Document.  Default is false (recommended). (optional)

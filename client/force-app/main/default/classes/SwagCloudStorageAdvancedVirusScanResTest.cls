@@ -94,6 +94,7 @@ private class SwagCloudStorageAdvancedVirusScanResTest {
         System.assertEquals('foundViruses', propertyMappings.get('FoundViruses'));
         System.assertEquals('errorDetailedDescription', propertyMappings.get('ErrorDetailedDescription'));
         System.assertEquals('fileSize', propertyMappings.get('FileSize'));
+        System.assertEquals('contentInformation', propertyMappings.get('ContentInformation'));
     }
 
     @isTest
@@ -111,5 +112,6 @@ private class SwagCloudStorageAdvancedVirusScanResTest {
         System.assertEquals(null, cloudStorageAdvancedVirusScanResult.verifiedFileFormat);
         System.assertEquals(null, cloudStorageAdvancedVirusScanResult.errorDetailedDescription);
         System.assertEquals(null, cloudStorageAdvancedVirusScanResult.fileSize);
+        System.assertEquals(null, cloudStorageAdvancedVirusScanResult.contentInformation);
     }
 }
