@@ -61,6 +61,8 @@ private class SwagScanCloudStorageApiTest {
             'allowPasswordProtectedFiles' => true,
             'allowMacros' => true,
             'allowXmlExternalEntities' => true,
+            'allowInsecureDeserialization' => true,
+            'allowHtml' => true,
             'restrictFileTypes' => 'restrictFileTypes_example'
         };
 
@@ -138,6 +140,8 @@ private class SwagScanCloudStorageApiTest {
             'allowPasswordProtectedFiles' => true,
             'allowMacros' => true,
             'allowXmlExternalEntities' => true,
+            'allowInsecureDeserialization' => true,
+            'allowHtml' => true,
             'restrictFileTypes' => 'restrictFileTypes_example'
         };
 
@@ -215,6 +219,8 @@ private class SwagScanCloudStorageApiTest {
             'allowPasswordProtectedFiles' => true,
             'allowMacros' => true,
             'allowXmlExternalEntities' => true,
+            'allowInsecureDeserialization' => true,
+            'allowHtml' => true,
             'restrictFileTypes' => 'restrictFileTypes_example'
         };
 
@@ -300,6 +306,8 @@ private class SwagScanCloudStorageApiTest {
             'allowPasswordProtectedFiles' => true,
             'allowMacros' => true,
             'allowXmlExternalEntities' => true,
+            'allowInsecureDeserialization' => true,
+            'allowHtml' => true,
             'restrictFileTypes' => 'restrictFileTypes_example'
         };
 
