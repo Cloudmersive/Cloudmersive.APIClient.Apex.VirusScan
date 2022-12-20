@@ -63,6 +63,7 @@ public class SwagScanApi {
      * @param allowXmlExternalEntities Set to false to block XML External Entities and other threats embedded in XML files, and other files that contain embedded content threats.  Set to true to allow these file types.  Default is false (recommended). (optional)
      * @param allowInsecureDeserialization Set to false to block Insecure Deserialization and other threats embedded in JSON and other object serialization files, and other files that contain embedded content threats.  Set to true to allow these file types.  Default is false (recommended). (optional)
      * @param allowHtml Set to false to block HTML input in the top level file; HTML can contain XSS, scripts, local file accesses and other threats.  Set to true to allow these file types.  Default is false (recommended) [for API keys created prior to the release of this feature default is true for backward compatability].  If set to true, HTML files containing script tags will be allowed, but ContainsScript will be set to true if script tags are present. (optional)
+     * @param allowUnsafeArchives Set to false to block unsafe archives such as Zip Bombs, and other archives that can cause unsafe extraction outcomes.  Default is false (recommended).  If set to true, unsafe archives will be allowed. (optional)
      * @param restrictFileTypes Specify a restricted set of file formats to allow as clean as a comma-separated list of file formats, such as .pdf,.docx,.png would allow only PDF, PNG and Word document files.  All files must pass content verification against this list of file formats, if they do not, then the result will be returned as CleanResult&#x3D;false.  Set restrictFileTypes parameter to null or empty string to disable; default is disabled. (optional)
      * @return SwagVirusScanAdvancedResult
      * @throws Swagger.ApiException if fails to make API call
@@ -88,6 +89,7 @@ public class SwagScanApi {
                 'allowXmlExternalEntities' => (Boolean) params.get('allowXmlExternalEntities'),
                 'allowInsecureDeserialization' => (Boolean) params.get('allowInsecureDeserialization'),
                 'allowHtml' => (Boolean) params.get('allowHtml'),
+                'allowUnsafeArchives' => (Boolean) params.get('allowUnsafeArchives'),
                 'restrictFileTypes' => (String) params.get('restrictFileTypes')
             },
             new List<String>{ 'application/json' },

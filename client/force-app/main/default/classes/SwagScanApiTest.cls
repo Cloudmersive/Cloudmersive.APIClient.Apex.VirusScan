@@ -55,6 +55,7 @@ private class SwagScanApiTest {
             'allowXmlExternalEntities' => true,
             'allowInsecureDeserialization' => true,
             'allowHtml' => true,
+            'allowUnsafeArchives' => true,
             'restrictFileTypes' => 'restrictFileTypes_example'
         };
 

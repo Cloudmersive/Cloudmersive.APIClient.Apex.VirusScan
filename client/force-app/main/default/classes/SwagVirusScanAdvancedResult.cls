@@ -75,6 +75,12 @@ public class SwagVirusScanAdvancedResult implements Swagger.MappedProperties {
     public Boolean containsHtml { get; set; }
 
     /**
+     * True if the uploaded file contains unsafe archive (e.g. zip) content, such as a Zip Bomb, or other configurations of a zip file that could lead to an unsafe extraction
+     * @return containsUnsafeArchive
+     */
+    public Boolean containsUnsafeArchive { get; set; }
+
+    /**
      * For file format verification-supported file formats, the contents-verified file format of the file.  Null indicates that the file format is not supported for contents verification.  If a Virus or Malware is found, this field will always be set to Null.
      * @return verifiedFileFormat
      */
@@ -103,6 +109,7 @@ public class SwagVirusScanAdvancedResult implements Swagger.MappedProperties {
         'ContainsXmlExternalEntities' => 'containsXmlExternalEntities',
         'ContainsInsecureDeserialization' => 'containsInsecureDeserialization',
         'ContainsHtml' => 'containsHtml',
+        'ContainsUnsafeArchive' => 'containsUnsafeArchive',
         'VerifiedFileFormat' => 'verifiedFileFormat',
         'FoundViruses' => 'foundViruses',
         'ContentInformation' => 'contentInformation'
@@ -128,6 +135,7 @@ public class SwagVirusScanAdvancedResult implements Swagger.MappedProperties {
         virusScanAdvancedResult.containsXmlExternalEntities = true;
         virusScanAdvancedResult.containsInsecureDeserialization = true;
         virusScanAdvancedResult.containsHtml = true;
+        virusScanAdvancedResult.containsUnsafeArchive = true;
         virusScanAdvancedResult.verifiedFileFormat = 'aeiou';
         virusScanAdvancedResult.foundViruses = new List<SwagVirusFound>{SwagVirusFound.getExample()};
         virusScanAdvancedResult.contentInformation = SwagAdditionalAdvancedScanInformatio.getExample();
@@ -147,6 +155,7 @@ public class SwagVirusScanAdvancedResult implements Swagger.MappedProperties {
                 && this.containsXmlExternalEntities == virusScanAdvancedResult.containsXmlExternalEntities
                 && this.containsInsecureDeserialization == virusScanAdvancedResult.containsInsecureDeserialization
                 && this.containsHtml == virusScanAdvancedResult.containsHtml
+                && this.containsUnsafeArchive == virusScanAdvancedResult.containsUnsafeArchive
                 && this.verifiedFileFormat == virusScanAdvancedResult.verifiedFileFormat
                 && this.foundViruses == virusScanAdvancedResult.foundViruses
                 && this.contentInformation == virusScanAdvancedResult.contentInformation;
@@ -166,6 +175,7 @@ public class SwagVirusScanAdvancedResult implements Swagger.MappedProperties {
         hashCode = (17 * hashCode) + (containsXmlExternalEntities == null ? 0 : System.hashCode(containsXmlExternalEntities));
         hashCode = (17 * hashCode) + (containsInsecureDeserialization == null ? 0 : System.hashCode(containsInsecureDeserialization));
         hashCode = (17 * hashCode) + (containsHtml == null ? 0 : System.hashCode(containsHtml));
+        hashCode = (17 * hashCode) + (containsUnsafeArchive == null ? 0 : System.hashCode(containsUnsafeArchive));
         hashCode = (17 * hashCode) + (verifiedFileFormat == null ? 0 : System.hashCode(verifiedFileFormat));
         hashCode = (17 * hashCode) + (foundViruses == null ? 0 : System.hashCode(foundViruses));
         hashCode = (17 * hashCode) + (contentInformation == null ? 0 : System.hashCode(contentInformation));
