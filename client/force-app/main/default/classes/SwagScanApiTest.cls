@@ -47,6 +47,7 @@ private class SwagScanApiTest {
 
         Map<String, Object> params = new Map<String, Object>{
             'inputFile' => Blob.valueOf('Sample text file\nContents'),
+            'fileName' => 'fileName_example',
             'allowExecutables' => true,
             'allowInvalidFiles' => true,
             'allowScripts' => true,
@@ -56,6 +57,8 @@ private class SwagScanApiTest {
             'allowInsecureDeserialization' => true,
             'allowHtml' => true,
             'allowUnsafeArchives' => true,
+            'allowOleEmbeddedObject' => true,
+            'options' => 'options_example',
             'restrictFileTypes' => 'restrictFileTypes_example'
         };
 

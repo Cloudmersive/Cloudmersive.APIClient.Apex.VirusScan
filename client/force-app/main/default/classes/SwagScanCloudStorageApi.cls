@@ -33,6 +33,7 @@ public class SwagScanCloudStorageApi {
      * @param bucketRegion Name of the region of the S3 bucket, such as \&#39;US-East-1\&#39; (required)
      * @param bucketName Name of the S3 bucket (required)
      * @param keyName Key name (also called file name) of the file in S3 that you wish to scan for viruses.  If the key name contains Unicode characters, you must base64 encode the key name and prepend it with \&#39;base64:\&#39;, such as: \&#39;base64:6ZWV6ZWV6ZWV6ZWV6ZWV6ZWV\&#39;. (required)
+     * @param roleArn Optional: Role ARN for STS Credential-based access.  This is for advanced access using the Security Token Service and is not required.  If the roleArn contains Unicode characters, you must base64 encode the key name and prepend it with \&#39;base64:\&#39;, such as: \&#39;base64:6ZWV6ZWV6ZWV6ZWV6ZWV6ZWV\&#39;. (optional)
      * @return SwagCloudStorageVirusScanResult
      * @throws Swagger.ApiException if fails to make API call
      */
@@ -54,7 +55,8 @@ public class SwagScanCloudStorageApi {
                 'secretKey' => (String) params.get('secretKey'),
                 'bucketRegion' => (String) params.get('bucketRegion'),
                 'bucketName' => (String) params.get('bucketName'),
-                'keyName' => (String) params.get('keyName')
+                'keyName' => (String) params.get('keyName'),
+                'roleArn' => (String) params.get('roleArn')
             },
             new List<String>{ 'application/json' },
             new List<String>{ 'application/json' },
@@ -70,6 +72,7 @@ public class SwagScanCloudStorageApi {
      * @param bucketRegion Name of the region of the S3 bucket, such as \&#39;US-East-1\&#39; (required)
      * @param bucketName Name of the S3 bucket (required)
      * @param keyName Key name (also called file name) of the file in S3 that you wish to scan for viruses.  If the key name contains Unicode characters, you must base64 encode the key name and prepend it with \&#39;base64:\&#39;, such as: \&#39;base64:6ZWV6ZWV6ZWV6ZWV6ZWV6ZWV\&#39;. (required)
+     * @param roleArn Optional: Role ARN for STS Credential-based access.  This is for advanced access using the Security Token Service and is not required.  If the roleArn contains Unicode characters, you must base64 encode the key name and prepend it with \&#39;base64:\&#39;, such as: \&#39;base64:6ZWV6ZWV6ZWV6ZWV6ZWV6ZWV\&#39;. (optional)
      * @param allowExecutables Set to false to block executable files (program code) from being allowed in the input file.  Default is false (recommended). (optional)
      * @param allowInvalidFiles Set to false to block invalid files, such as a PDF file that is not really a valid PDF file, or a Word Document that is not a valid Word Document.  Default is false (recommended). (optional)
      * @param allowScripts Set to false to block script files, such as a PHP files, Python scripts, and other malicious content or security threats that can be embedded in the file.  Set to true to allow these file types.  Default is false (recommended). (optional)
@@ -101,6 +104,7 @@ public class SwagScanCloudStorageApi {
                 'bucketRegion' => (String) params.get('bucketRegion'),
                 'bucketName' => (String) params.get('bucketName'),
                 'keyName' => (String) params.get('keyName'),
+                'roleArn' => (String) params.get('roleArn'),
                 'allowExecutables' => (Boolean) params.get('allowExecutables'),
                 'allowInvalidFiles' => (Boolean) params.get('allowInvalidFiles'),
                 'allowScripts' => (Boolean) params.get('allowScripts'),

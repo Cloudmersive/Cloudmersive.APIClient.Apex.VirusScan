@@ -17,7 +17,8 @@ private class SwagScanCloudStorageApiTest {
             'secretKey' => 'secretKey_example',
             'bucketRegion' => 'bucketRegion_example',
             'bucketName' => 'bucketName_example',
-            'keyName' => 'keyName_example'
+            'keyName' => 'keyName_example',
+            'roleArn' => 'roleArn_example'
         };
 
         SwagClient client;
@@ -55,6 +56,7 @@ private class SwagScanCloudStorageApiTest {
             'bucketRegion' => 'bucketRegion_example',
             'bucketName' => 'bucketName_example',
             'keyName' => 'keyName_example',
+            'roleArn' => 'roleArn_example',
             'allowExecutables' => true,
             'allowInvalidFiles' => true,
             'allowScripts' => true,

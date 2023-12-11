@@ -55,6 +55,7 @@ public class SwagScanApi {
      * Advanced Scan a file for viruses
      * Advanced Scan files with 360-degree Content Protection across Viruses and Malware, executables, invalid files, scripts, and even restrictions on accepted file types with complete content verification. Customize threat rules to your needs. Leverage continuously updated signatures for millions of threats, and advanced high-performance scanning capabilities.  Over 17 million virus and malware signatures.  Continuous cloud-based updates.  Block threats beyond viruses including executables, scripts, invalid files, and more.  Optionally limit input files to a specific set of file types (e.g. PDF and Word Documents only).  Wide file format support including Office, PDF, HTML, Flash, MSG, and a wide range of image file formats.  Zip support including .Zip, .Rar, .DMG, .Tar, and other archive formats.  Multi-threat scanning across viruses, malware, trojans, ransomware, and spyware.  High-speed in-memory scanning delivers subsecond typical response time.
      * @param inputFile Input file to perform the operation on. (required)
+     * @param fileName Optional: specify the original file name of the file being scanned.  By default the file name is taken from inputFile parameter, but if this is not provided, or you wish to override it, you can specify the original file name using this parameter. (optional)
      * @param allowExecutables Set to false to block executable files (program code) from being allowed in the input file.  Default is false (recommended). (optional)
      * @param allowInvalidFiles Set to false to block invalid files, such as a PDF file that is not really a valid PDF file, or a Word Document that is not a valid Word Document.  Default is false (recommended). (optional)
      * @param allowScripts Set to false to block script files, such as a PHP files, Python scripts, and other malicious content or security threats that can be embedded in the file.  Set to true to allow these file types.  Default is false (recommended). (optional)
@@ -64,6 +65,8 @@ public class SwagScanApi {
      * @param allowInsecureDeserialization Set to false to block Insecure Deserialization and other threats embedded in JSON and other object serialization files, and other files that contain embedded content threats.  Set to true to allow these file types.  Default is false (recommended). (optional)
      * @param allowHtml Set to false to block HTML input in the top level file; HTML can contain XSS, scripts, local file accesses and other threats.  Set to true to allow these file types.  Default is false (recommended) [for API keys created prior to the release of this feature default is true for backward compatability].  If set to true, HTML files containing script tags will be allowed, but ContainsScript will be set to true if script tags are present. (optional)
      * @param allowUnsafeArchives Set to false to block unsafe archives such as Zip Bombs, and other archives that can cause unsafe extraction outcomes.  Default is false (recommended).  If set to true, unsafe archives will be allowed. (optional)
+     * @param allowOleEmbeddedObject Set to false to block OLE embedded objects, which can contain vulnerabilities and executable code.  Default is false (recommended).  If set to true, OLE embedded objects will be allowed. (optional)
+     * @param options Comma separated set of configuration operations.  Include permitJavascriptAndHtmlInPDFs to allow JavaScript and HTML in PDF files.  Default is no options. (optional)
      * @param restrictFileTypes Specify a restricted set of file formats to allow as clean as a comma-separated list of file formats, such as .pdf,.docx,.png would allow only PDF, PNG and Word document files.  All files must pass content verification against this list of file formats, if they do not, then the result will be returned as CleanResult&#x3D;false.  Set restrictFileTypes parameter to null or empty string to disable; default is disabled. (optional)
      * @return SwagVirusScanAdvancedResult
      * @throws Swagger.ApiException if fails to make API call
@@ -81,6 +84,7 @@ public class SwagScanApi {
             query, form,
             new Map<String, Object>(),
             new Map<String, Object>{
+                'fileName' => (String) params.get('fileName'),
                 'allowExecutables' => (Boolean) params.get('allowExecutables'),
                 'allowInvalidFiles' => (Boolean) params.get('allowInvalidFiles'),
                 'allowScripts' => (Boolean) params.get('allowScripts'),
@@ -90,6 +94,8 @@ public class SwagScanApi {
                 'allowInsecureDeserialization' => (Boolean) params.get('allowInsecureDeserialization'),
                 'allowHtml' => (Boolean) params.get('allowHtml'),
                 'allowUnsafeArchives' => (Boolean) params.get('allowUnsafeArchives'),
+                'allowOleEmbeddedObject' => (Boolean) params.get('allowOleEmbeddedObject'),
+                'options' => (String) params.get('options'),
                 'restrictFileTypes' => (String) params.get('restrictFileTypes')
             },
             new List<String>{ 'application/json' },

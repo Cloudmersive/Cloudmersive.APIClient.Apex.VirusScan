@@ -32,10 +32,17 @@ public class SwagAdditionalAdvancedScanInformatio implements Swagger.MappedPrope
      */
     public Boolean containsImage { get; set; }
 
+    /**
+     * Relevant subfile name in an archive format for identified threats, if any
+     * @return relevantSubfileName
+     */
+    public String relevantSubfileName { get; set; }
+
     private static final Map<String, String> propertyMappings = new Map<String, String>{
         'ContainsJSON' => 'containsJSON',
         'ContainsXML' => 'containsXML',
-        'ContainsImage' => 'containsImage'
+        'ContainsImage' => 'containsImage',
+        'RelevantSubfileName' => 'relevantSubfileName'
     };
 
     public Map<String, String> getPropertyMappings() {
@@ -47,6 +54,7 @@ public class SwagAdditionalAdvancedScanInformatio implements Swagger.MappedPrope
         additionalAdvancedScanInformation.containsJSON = true;
         additionalAdvancedScanInformation.containsXML = true;
         additionalAdvancedScanInformation.containsImage = true;
+        additionalAdvancedScanInformation.relevantSubfileName = 'aeiou';
         return additionalAdvancedScanInformation;
     }
 
@@ -55,7 +63,8 @@ public class SwagAdditionalAdvancedScanInformatio implements Swagger.MappedPrope
             SwagAdditionalAdvancedScanInformatio additionalAdvancedScanInformation = (SwagAdditionalAdvancedScanInformatio) obj;
             return this.containsJSON == additionalAdvancedScanInformation.containsJSON
                 && this.containsXML == additionalAdvancedScanInformation.containsXML
-                && this.containsImage == additionalAdvancedScanInformation.containsImage;
+                && this.containsImage == additionalAdvancedScanInformation.containsImage
+                && this.relevantSubfileName == additionalAdvancedScanInformation.relevantSubfileName;
         }
         return false;
     }
@@ -65,6 +74,7 @@ public class SwagAdditionalAdvancedScanInformatio implements Swagger.MappedPrope
         hashCode = (17 * hashCode) + (containsJSON == null ? 0 : System.hashCode(containsJSON));
         hashCode = (17 * hashCode) + (containsXML == null ? 0 : System.hashCode(containsXML));
         hashCode = (17 * hashCode) + (containsImage == null ? 0 : System.hashCode(containsImage));
+        hashCode = (17 * hashCode) + (relevantSubfileName == null ? 0 : System.hashCode(relevantSubfileName));
         return hashCode;
     }
 }

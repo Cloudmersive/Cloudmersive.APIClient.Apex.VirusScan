@@ -93,6 +93,7 @@ private class SwagVirusScanAdvancedResultTest {
         System.assertEquals('containsInsecureDeserialization', propertyMappings.get('ContainsInsecureDeserialization'));
         System.assertEquals('containsHtml', propertyMappings.get('ContainsHtml'));
         System.assertEquals('containsUnsafeArchive', propertyMappings.get('ContainsUnsafeArchive'));
+        System.assertEquals('containsOleEmbeddedObject', propertyMappings.get('ContainsOleEmbeddedObject'));
         System.assertEquals('verifiedFileFormat', propertyMappings.get('VerifiedFileFormat'));
         System.assertEquals('foundViruses', propertyMappings.get('FoundViruses'));
         System.assertEquals('contentInformation', propertyMappings.get('ContentInformation'));
@@ -113,6 +114,7 @@ private class SwagVirusScanAdvancedResultTest {
         System.assertEquals(null, virusScanAdvancedResult.containsInsecureDeserialization);
         System.assertEquals(null, virusScanAdvancedResult.containsHtml);
         System.assertEquals(null, virusScanAdvancedResult.containsUnsafeArchive);
+        System.assertEquals(null, virusScanAdvancedResult.containsOleEmbeddedObject);
         System.assertEquals(null, virusScanAdvancedResult.verifiedFileFormat);
         System.assertEquals(null, virusScanAdvancedResult.contentInformation);
     }

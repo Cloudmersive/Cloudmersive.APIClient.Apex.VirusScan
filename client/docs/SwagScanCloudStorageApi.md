@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 <a name="scanCloudStorageScanAwsS3File"></a>
 # **scanCloudStorageScanAwsS3File**
-> SwagCloudStorageVirusScanResult scanCloudStorageScanAwsS3File(accessKey, secretKey, bucketRegion, bucketName, keyName)
+> SwagCloudStorageVirusScanResult scanCloudStorageScanAwsS3File(accessKey, secretKey, bucketRegion, bucketName, keyName, roleArn)
 
 Scan an AWS S3 file for viruses
 
@@ -36,7 +36,8 @@ Map<String, Object> params = new Map<String, Object>{
     'secretKey' => 'secretKey_example',
     'bucketRegion' => 'bucketRegion_example',
     'bucketName' => 'bucketName_example',
-    'keyName' => 'keyName_example'
+    'keyName' => 'keyName_example',
+    'roleArn' => 'roleArn_example'
 };
 
 try {
@@ -57,6 +58,7 @@ Name | Type | Description  | Notes
  **bucketRegion** | **String**| Name of the region of the S3 bucket, such as \&#39;US-East-1\&#39; |
  **bucketName** | **String**| Name of the S3 bucket |
  **keyName** | **String**| Key name (also called file name) of the file in S3 that you wish to scan for viruses.  If the key name contains Unicode characters, you must base64 encode the key name and prepend it with \&#39;base64:\&#39;, such as: \&#39;base64:6ZWV6ZWV6ZWV6ZWV6ZWV6ZWV\&#39;. |
+ **roleArn** | **String**| Optional: Role ARN for STS Credential-based access.  This is for advanced access using the Security Token Service and is not required.  If the roleArn contains Unicode characters, you must base64 encode the key name and prepend it with \&#39;base64:\&#39;, such as: \&#39;base64:6ZWV6ZWV6ZWV6ZWV6ZWV6ZWV\&#39;. | [optional]
 
 ### Return type
 
@@ -73,7 +75,7 @@ Name | Type | Description  | Notes
 
 <a name="scanCloudStorageScanAwsS3FileAdvanced"></a>
 # **scanCloudStorageScanAwsS3FileAdvanced**
-> SwagCloudStorageAdvancedVirusScanRes scanCloudStorageScanAwsS3FileAdvanced(accessKey, secretKey, bucketRegion, bucketName, keyName, allowExecutables, allowInvalidFiles, allowScripts, allowPasswordProtectedFiles, allowMacros, allowXmlExternalEntities, allowInsecureDeserialization, allowHtml, restrictFileTypes)
+> SwagCloudStorageAdvancedVirusScanRes scanCloudStorageScanAwsS3FileAdvanced(accessKey, secretKey, bucketRegion, bucketName, keyName, roleArn, allowExecutables, allowInvalidFiles, allowScripts, allowPasswordProtectedFiles, allowMacros, allowXmlExternalEntities, allowInsecureDeserialization, allowHtml, restrictFileTypes)
 
 Advanced Scan an AWS S3 file for viruses
 
@@ -94,6 +96,7 @@ Map<String, Object> params = new Map<String, Object>{
     'bucketRegion' => 'bucketRegion_example',
     'bucketName' => 'bucketName_example',
     'keyName' => 'keyName_example',
+    'roleArn' => 'roleArn_example',
     'allowExecutables' => true,
     'allowInvalidFiles' => true,
     'allowScripts' => true,
@@ -123,6 +126,7 @@ Name | Type | Description  | Notes
  **bucketRegion** | **String**| Name of the region of the S3 bucket, such as \&#39;US-East-1\&#39; |
  **bucketName** | **String**| Name of the S3 bucket |
  **keyName** | **String**| Key name (also called file name) of the file in S3 that you wish to scan for viruses.  If the key name contains Unicode characters, you must base64 encode the key name and prepend it with \&#39;base64:\&#39;, such as: \&#39;base64:6ZWV6ZWV6ZWV6ZWV6ZWV6ZWV\&#39;. |
+ **roleArn** | **String**| Optional: Role ARN for STS Credential-based access.  This is for advanced access using the Security Token Service and is not required.  If the roleArn contains Unicode characters, you must base64 encode the key name and prepend it with \&#39;base64:\&#39;, such as: \&#39;base64:6ZWV6ZWV6ZWV6ZWV6ZWV6ZWV\&#39;. | [optional]
  **allowExecutables** | **Boolean**| Set to false to block executable files (program code) from being allowed in the input file.  Default is false (recommended). | [optional]
  **allowInvalidFiles** | **Boolean**| Set to false to block invalid files, such as a PDF file that is not really a valid PDF file, or a Word Document that is not a valid Word Document.  Default is false (recommended). | [optional]
  **allowScripts** | **Boolean**| Set to false to block script files, such as a PHP files, Python scripts, and other malicious content or security threats that can be embedded in the file.  Set to true to allow these file types.  Default is false (recommended). | [optional]
